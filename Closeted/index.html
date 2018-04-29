@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Closeted</title>
+    <link rel="stylesheet" type="text/css" href="./Style/style.css">
+    <script src="./Script/jquery.js"></script>
+    <script src="./Script/main.js"></script>
+</head>
+
+<body>
+ <!--Home Page-->
+        <div id="homepage" >
+        <table width="100%" height="100%">
+        <tr>
+        <td width="50%"><img alt="Closeted illustration" src="Assets/Closet.png" width="80%" /></td>
+        <td width="50%" style="text-align: center"><img alt="Title" src="Assets/Title.png" width="95%" />
+        <p>A replayable simulation of how gay people date under a homophobic
+culture, which illustrates their social constraints and mental struggles</p>
+        <a><img alt="Start" src="Assets/Start.png" width="60%" id="start"/></a>
+        </td>
+        </tr>
+        </table>
+       
+        </div>
+
+ <!--Main Page-->
+
+    <div id="mainpage" class="hidden">
+  <div id="header">
+<div id="day" >
+<h1>Day 0</h1>
+</div>
+<div id="relationship" >
+<h6>Relationship Status</h6>
+<p id="relationDescript">Here shows how your boyfriend thinks about you</p>
+<div class="slot">
+ <div id="bar1"></div>
+</div>
+<img alt="mark" src="Assets/mark1.png" class="mark" style="float:left"/>
+<h6 class="leftMark">Zach wants to break up with you</h6>
+<img alt="mark" src="Assets/mark1.png" class="mark" style="float:right"/>
+<h6 class="rightMark">Zach can't live without you</h6>
+</div>
+<div id="exposure">
+<h6>Exposure of Identity</h6>
+<p id="exposureDescript">Here shows how many people know you are gay</p>
+<div class="slot">
+ <div id="bar2"></div>
+</div>
+<img alt="mark" src="Assets/mark2.png" class="mark" style="float:left"/>
+<h6 class="leftMark">Nobody thinks you are gay</h6>
+<img alt="mark" src="Assets/mark2.png" class="mark" style="float:right"/>
+<h6 class="rightMark">Everybody knows you are gay</h6>
+</div>
+</div>
+<div id="story">
+    
+ <!--Background1-->
+<div id="Background1" class="center"><table  width="100%" height="78%" style="position:relative">
+<tr>
+    <td width="24%" style="text-align: left"><img alt="Town" src="Assets/Town.png" height="55%"  /></td>
+    <td width="4%"></td>
+    <td style="text-align: left">
+    <p>You were born in a small town called Cyniza. Unlike those big cities near the sea, Cyniza is located in an landlocked area with poor accessibility. People don't have many chances to see what's outside. They just keep their simple and conservative lifestyle. They're too stubborn to make any changes.</p>
+<br />
+<p>You could have married a woman, raised a couple of babies and lived an orthodox life like the rest of them. But you can't! Because you're GAY. The people in this town believe it's wrong for a boy to love another boy. They like to gossip about the unusual relationship between the same sex. </p>
+<br />
+<p>And your family is also very sensitive about this issue. Your father often tells you that your uncle ran out of the town because of his "inappropriate" sexual behaviors with a boy. He disppeared since then and became a family shame. Your father warns you not to be someone like your uncle.</p>
+</td>
+</tr>    
+    </table>
+    <table width="100%" height="25%">
+    <tr height="1%"><td colspan="3" style="text-align: right;"><p>--- 1/3 ---</p></td></tr>
+    <tr>
+    <td style="text-align: center;vertical-align: middle;" width="47.5%"><div class="button" id="Background1-continue"><h3>Continue</h3>
+    </div>
+</td>
+<td width="5%"></td>
+<td style="text-align: center; vertical-align: middle;" width="47.5%"><div class="button" id="skip"><h3>Skip the background story</h3>
+    </div></td>
+    </tr>
+    </table>
+    
+    </div>
+    
+ <!--Background2-->
+<div id="Background2" class="hidden"><table  width="100%" height="78%" style="position:relative">
+<tr>
+    <td width="24%" style="text-align: left"><img alt="Boys love" src="Assets/BL.png" height="55%"  /></td>
+    <td width="4%"></td>
+    <td style="text-align: left">
+    <p>You parents believe good education can help you get on the right track. So, they sent you to a prestigious boarding school. This school is as strict as how people in this town stick to their lifestyle. They don't allow students to get out of the campus except for the weekends. They even give students classes at night.</p>
+<br />
+<p>But in this boarding school, you fall in love. The boy is called Zach. At the first sight, you know he's the one. Although you feel so right for each other, you both think it is not a good idea to come out of the closet in this place. You try to date as covertly as you can.</p>
+<br />
+<p>It is not easy to have some secret dates. You and Zach live in different dorms. You can only meet each other on campus. But too many unfriendly people around. They're curious about your relationship with Zach.</p>
+</td>
+</tr>    
+    </table>
+    <table width="100%" height="25%">
+    <tr height="1%"><td colspan="3" style="text-align: right;"><p>--- 2/3 ---</p></td></tr>
+    <tr>
+    <td style="text-align: center; vertical-align: middle;" width="47.5%"><div class="button" id="Background2-continue"><h3>Continue</h3>
+    </div>
+</td>
+<td width="5%"></td>
+<td style="text-align: center; vertical-align: middle;" width="47.5%"><div class="button" id="skip"><h3>Skip the background story</h3>
+    </div></td>
+    </tr>
+    </table>
+    
+    </div>
+
+  <!--Background3-->   
+<div id="Background3" class="hidden"><table  width="100%" height="78%" style="position:relative">
+<tr>
+    <td width="24%" style="text-align: left"><img alt="Balance" src="Assets/Balance.png" height="55%"  /></td>
+    <td width="4%"></td>
+    <td style="text-align: left">
+    <p>There are two meter bars above. The blue one will show the relationship status of you and Zach. Your goal is to reach the maximum. Zach will break up with you if you reach the minimum.</p>
+<br />
+<p>Meanwhile, you should keep the red bar as short as possible. It indicates how many people think you are gay. Something bad might happen if you reach the maximum.</p>
+<br />
+<p>Can you maintain your relationship with Zach? Can you survive in this homophobic town? Will love defeat everything?</p>
+</td>
+</tr>    
+    </table>
+    <table width="100%" height="25%">
+    <tr height="1%"><td colspan="3" style="text-align: right;"><p>--- 3/3 ---</p></td></tr>
+    <tr>
+    <td style="text-align: center; vertical-align: middle;" width="100%"><div class="button" id="skip"><h3>Enter Day 1</h3>
+    </div>
+</td>
+
+    </tr>
+    </table>
+    
+    </div>
+    
+ <!--Monday-->
+<div id="Monday" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>Monday</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>It's a normal Monday with busy class schedule and lots of assignments. You and Zach have different schedules, so you
+are unable to meet him in class or eat lunch together. But maybe you still want to talk with Zach a little bit. He might miss
+you as well. Do you want to text him in class? Or do you want to meet him in person after all of the classes at night?</p></td>
+</tr>
+<tr style="text-align: center"><td width="25%"><a id="text"><img alt="Text Zach in class" src="Assets/Text.png" class="choice" />
+    <h3>Text Zach in class</h3></a>
+
+</td>
+<td width="25%"><a id="playground"><img alt="Meet Zach on the playground at night" src="Assets/Playground.png" class="choice" /><h3>Meet Zach on the playground at night</h3></a>
+
+</td>
+<td width="25%"><a id="classroom"><img alt="Wait Zach outside his classroom" src="Assets/Classroom.png"  class="choice"/><h3>Wait Zach outside his classroom</h3></a>
+
+</td>
+<td width="25%"><a id="noContact"><img alt="End today without contacting Zach" src="Assets/End.png" class="choice"/>
+<h3>End today without contacting Zach</h3>
+
+</a>
+</td>
+</tr>
+</table></div>
+    
+ <!--Text-->
+<div id="Text" class="hidden" ><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>Thanks for texting me in class. At least, I love the jokes you told. They really helped me survive in that bored biology class...</p>
+<br />
+<p>To be honest, I'm a person with strong sense of insecurity. I can't feel you if I can't meet you in person. Oh, we'll have show choir rehearsal tomorrow! Hope I'll meet you there!</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="risk1"><h3>Don't worry, Zach. I'll meet you tomorrow. Good night!</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+ <!--Gossip-->
+<div id="Gossip" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Sarah" src="Assets/Sarah.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Sarah</h2>
+    <br />
+    <p>(One of your mean classmates, Sarah, texted you at midnight)</p>
+<br />
+        <p id="gossipContent">Tonight, I saw you and Zach holding hands on the playground!!!</p>
+<br />
+<p>What's your relationship with him? I don't understand... Are you gay???</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="gossip-next"><h3>No, we're just friends. You must misunderstand something.</h3>
+    </div>
+    </td>
+    </tr>
+    </table>
+    </div>
+    
+ <!--Gossip2-->
+<div id="Gossip2" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Sarah" src="Assets/Sarah.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Sarah</h2>
+    <br />
+    <p>Really? You just made me more confused. There are always rumors about you loving boys. Don't you notice it? I think they can't come out of nowhere.</p>
+<br />
+        <p>Maybe you really should dig a girl to clarify it. Good night!</p>
+</td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end1"><h3>Please don't spread those rumors. Words do hurt. Good night!</h3>
+    </div>
+    </td>
+    </tr>
+    </table>
+    </div>    
+    
+ <!--End this day-->
+<div id="End" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach-pissed" src="Assets/Zach-pissed.png" height="80%" /></td>
+    <td  width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>I can't believe you disappeared for AN ENTIRE DAY! Do you know how hard I missed you?? At least, you should text me...</p>
+<br />
+<p>Well, maybe you want to erase the suspicions from those mean people. True... I heared less rumors about us these days. I can only comfort me in this way. But I do hope I can meet you tomorrow.</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end2"><h3>I'm sorry, Zach. Please don't think too much. Have a good night. Everything will be fine.</h3>
+    </div>
+
+</td>
+</tr>
+
+
+   
+
+</table></div>    
+
+ <!--Playground-->
+<div id="Playground" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="18%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td  width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>Finally, we meet each other after such a busy day. I feel so happy to hang out with you on the playround.</p>
+<br />
+<p>
+But it's pretty upset that there are too many people around. The only thing we could do is to talk. I don't even dare to hold your hand...</p>
+    </td>
+</tr>
+<tr height="20%"><td colspan="3" style="text-align: center; vertical-align: bottom;"><div class="button" id="hold"><h3>Don't worry, Zach. It's too dark here. They won't see us. Let me hold your hand.</h3>
+    </div>
+
+</td>
+</tr>
+<tr height="20%"><td colspan="3" style="text-align: center"><div class="button" id="noHold">
+<h3>I feel the same. Sorry, what a pity! Let's go back.</h3>
+    </div>
+
+
+</td>
+</tr>    
+
+</table></div>
+    
+<!--Hold-->
+<div id="Hold" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(You hold Zach's hand)</p>
+<br />
+<p>Your hand is so warm. I'll hold it tight. Don't let go. I hope this moment will last forever...</p>
+<br />
+<p>Sorry, honey. I can't continue. Someone is coming towards us. I hope he didn't see it.</p>
+</td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="risk2"><h3>We'll be fine. It's not early. Let's go back to dorms.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+ <!--NotHold-->
+<div id="NotHold" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>I hope on this planet, there's a place for us. Only for us. We can do whatever we want. We can have our life. Nobody will ever judge us anymore.</p>
+<br />
+<p>But maybe this place is only in my mind. It's been a long day. I'll go to bed, honey.</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end1"><h3>We'll find that place. Good night, my babe!</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+ <!--Classroom-->
+<div id="Classroom" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>What a surprise! WOW! You are soooo sweet to wait me outside my classroom. I can't stop thinking about you in the last class. Then when I get out of the classroom, here you are.</p>
+<br />
+<p>However, I think we'd better play safe. I just saw some of my classmates were staring at us. They might be curious about our relationship. We can't let them know!</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end1"><h3>Don't worry, Zach. It'll be fine.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+ <!--Tuesday-->
+<div id="Tuesday" class="hidden"><table  width="100%" height="20%">
+<tr>
+    <td colspan="3"><h2>Tuesday</h2></td>
+</tr>
+<tr>
+<td colspan="3"><p>Today it's the regular rehearsal for the show choir club. You're so happy that you can meet Zach in person. When you
+get to the choir room, you find Zach has already been there. Do you want to stand beside him? Or do you prefer to
+stand somewhere else in order not to let others suspicious of your relationship?</p></td>
+</tr>
+    </table>
+<div>
+<table width="100%" height="100%" >
+<tr style="text-align: center">
+<td width="27%"><a id="besideSomeone" style="display:inline-block"><img alt="Stand beside someone else" src="Assets/Stand.png" style="width:90%"/>
+    <h3 style="text-align: center">Stand beside someone else</h3></a></td>
+
+    <td width="46%" >
+    <img alt="Boys illustration" src="Assets/boys.png"  style="width: 100%; margin: auto" />
+  </td>
+ 
+    <td width="27%">  
+    <a id="besideZach" style="display:inline-block; padding: 0;"><img alt="Stand beside Zach" src="Assets/Stand.png" style="width:90%" />
+
+    <h3 style="text-align: center">Stand beside Zach</h3></a>
+   </td>
+
+</tr>
+</table>
+    </div>
+
+
+</div>
+
+ <!--Beside someone else-->
+<div id="BesideSomeone" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach-pissed.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(After the rehearsal)</p>
+    <br />
+    <p>Why do you stand beside Jeremy instead of me? Finally, I can meet you in person. But you refuse to stand beside me. I couldn't even talk to you. This is insane!</p>
+<br />
+<p>Fine... At least nobody will be suspicious of our relationship.</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end3"><h3>I'm sorry, Zach. I'll do better next time. Let's go home, babe.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+
+ <!--Beside Zach-->
+<div id="BesideZach" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(After the rehearsal)</p>
+    <br />
+    <p>We did a good job in rehearsal today! Your voice is always amazing! I'm so happy we can do something together today.</p>
+<br />
+<p>But I guess more people will be suspicious of our relationship. I can see from their curious but unfriendly eyes.</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end3"><h3>No worry, Zach. It'll be fine. Let's go home, babe.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+ <!--Wednesday-->
+<div id="Wednesday" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>Wenesday</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>Wednesday is another busy school day. Just like Monday, you and Zach have different schedules, so you
+are unable to meet him in class or eat lunch together. But maybe you still want to talk with Zach a little bit. He might miss
+you as well. Do you want to text him in class? Or do you want to meet him in person after all of the classes at night?</p></td>
+</tr>
+<tr style="text-align: center"><td width="25%"><a id="text"><img alt="Text Zach in class" src="Assets/Text.png" class="choice" />
+    <h3>Text Zach in class</h3></a>
+
+</td>
+<td width="25%"><a id="playground"><img alt="Meet Zach on the playground at night" src="Assets/Playground.png" class="choice" /><h3>Meet Zach on the playground at night</h3></a>
+
+</td>
+<td width="25%"><a id="classroom"><img alt="Wait Zach outside his classroom" src="Assets/Classroom.png"  class="choice"/><h3>Wait Zach outside his classroom</h3></a>
+
+</td>
+<td width="25%"><a id="noContact"><img alt="End today without contacting Zach" src="Assets/End.png" class="choice"/>
+<h3>End today without contacting Zach</h3>
+
+</a>
+</td>
+</tr>
+</table></div>
+    
+ <!--Thursday-->
+<div id="Thursday" class="hidden"><table  width="100%" height="20%">
+<tr>
+    <td colspan="3"><h2>Thursday</h2></td>
+</tr>
+<tr>
+<td colspan="3"><p>You need to go to the show choir club for rehearsal again. You're so happy that you can meet Zach in person today. When you
+get to the choir room, you find Zach has already been there. Do you want to stand beside him? Or do you prefer to
+stand somewhere else in order not to let others suspicious of your relationship?</p></td>
+</tr>
+    </table>
+<div>
+<table width="100%" height="100%" >
+<tr style="text-align: center">
+<td width="27%"><a id="besideSomeone" style="display:inline-block"><img alt="Stand beside someone else" src="Assets/Stand.png" style="width:90%"/>
+    <h3 style="text-align: center">Stand beside someone else</h3></a></td>
+
+    <td width="46%" >
+    <img alt="Boys illustration" src="Assets/boys.png"  style="width: 100%; margin: auto" />
+  </td>
+ 
+    <td width="27%">  
+    <a id="besideZach" style="display:inline-block; padding: 0;"><img alt="Stand beside Zach" src="Assets/Stand.png" style="width:90%" />
+
+    <h3 style="text-align: center">Stand beside Zach</h3></a>
+   </td>
+
+</tr>
+</table>
+    </div>
+
+
+</div>
+ 
+ <!--Friday-->
+<div id="Friday" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>Friday</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>TGIF!!! After a busy week, you finally get some time to spend with your boyfriend. Do you want to ask him out tonight?
+Surely, it's going to be a great opportunity for you guys to get closer. But don't forget all of your classmates are also
+hanging around almost EVERYWHERE on Friday night!! Be careful! You don't want them to be suspicious, do you?</p></td>
+</tr>
+<tr style="text-align: center" >
+<td width="25%"></td>
+<td width="25%" style="vertical-align: top"><a id="date"><img alt="Ask Zach out" src="Assets/Askout.png" class="choice" />
+    <h3>Ask Zach out</h3></a>
+
+</td>
+
+<td width="25%" style="vertical-align: top"><a id="notDate"><img alt="End today without contacting Zach" src="Assets/End.png" class="choice"/>
+<h3>End today without contacting Zach</h3>
+</a>
+</td>
+<td width="25%"></td>
+</tr>
+</table></div>
+    
+ <!--Date-->
+<div id="Date" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" style="height: 80%; max-height: 80%;
+    max-width: 80%;" /></td>
+    <td width="1%"></td>
+    <td colspan="3" style="text-align: left; width: 77%"><h2>Zach</h2>
+    <br />
+    <p>Hey, honey. I'm so glad that you ask me out. What shall we do tonight? There's a new Narvel movie I want to watch! But I know some of my classmates are also going to the cinema today. I don't want to let them see us...</p>
+<br />
+<p>Maybe we can just hang out in the little woods near the campus. Only a few people go there. We'll be safe.</p></td>
+</tr>
+
+<tr style="text-align: center"><td colspan="2" >
+    </td>
+<td width="27%"><a id="movie"><img alt="Go to the movie" src="Assets/Movie.png"  style="width:55%" />
+    <h3>Go to the movie</h3></a></td>
+<td width="27%"><a id="woods"><img alt="Go to the woods" src="Assets/Woods.png" style="width:55%"/>
+    <h3>Go to the woods</h3></a></td>
+<td width="23%"></td>
+</tr>
+    
+    </table>
+    </div>
+    
+ <!--Movie-->
+<div id="Movie" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>In the movie</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>The movie starts. The whole theater goes dark. You feel safer and slowly hold Zach's hand. Then his head falls on your
+shoulder. You feel happy but a little nervous as well. You are still afraid that someone might see you. Under the darkness,
+do you dare to move one step forward?</p></td>
+</tr>
+<tr style="text-align: center" >
+<td width="25%"></td>
+<td width="25%" style="vertical-align: top"><a id="kiss1"><img alt="Kiss Zach in the darkness" src="Assets/Kiss.png" class="choice" />
+    <h3>Kiss Zach in the darkness</h3></a>
+
+</td>
+
+<td width="25%" style="vertical-align: top"><a id="afterMovie"><img alt="Stop touching Zach" src="Assets/Stop.png" class="choice"/>
+<h3>Stop touching Zach</h3>
+</a>
+</td>
+<td width="25%"></td>
+</tr>
+</table></div>
+    
+<!--After movie-->
+<div id="AfterMovie"  class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(After the movie)</p>
+    <br />
+    <p>OMG!!! This movie is awesome! It's almost one of my favorite movies this year. Honey, you just made a great choice to take me into the cinema.</p>
+<br />
+<p>Although we couldn't kiss in the theater, I'm still very happy tonight. I hope nobody saw us in the cinema.</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end4"><h3>I like this movie too, Zach. Let me take you back.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+<!--Woods-->
+<div id="Woods" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>In the woods</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>You and Zach go into the woods. At first, you expect this place is a quiet place. However, it is not because there are too
+many mosquitoes. They are buzzing around and stinging Zach without stop. Zach is very upset. What should you do?</p></td>
+</tr>
+<tr style="text-align: center" >
+<td width="25%"></td>
+<td width="25%" style="vertical-align: top"><a id="kiss2"><img alt="Hug and kiss Zach to comfort" src="Assets/Kiss.png" class="choice" />
+    <h3>Hug and kiss Zach to comfort</h3></a>
+
+</td>
+
+<td width="25%" style="vertical-align: top"><a id="outWoods"><img alt="Lead him out of the woods" src="Assets/Out.png" class="choice"/>
+<h3>Lead him out of the woods</h3>
+</a>
+</td>
+<td width="25%"></td>
+</tr>
+</table></div>
+    
+<!--Out of the woods-->
+<div id="OutWoods"  class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach-pissed.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>I'm so disappointed in tonight. At first, I thought we could have fun tonight. But right now, everything turned into a mess. It's a horrible decision to get into the damn woods.</p>
+<br />
+<p>I'm really not in the mood. I think I'll go back to my dorm. I hope I can get better tomorrow.</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end4"><h3>Sorry, Zach. You'll get better! Let me take you back.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+
+ <!--AfterKiss-->
+<div id="AfterKiss"  class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(You kissed Zach)</p>
+<br />
+<p>What a great date! I'm so impressed by your dating choice today! You made my day. And your kiss... It was so magical that it almost swept all of my pain away. Although I still felt a little insecure when we kissed. I was suspicious that someone might be peeping us. Anyway, it's worth the risk! I love you! I hope to stay with you forever!</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end4"><h3>I love you, too. My darling Zach. Have a sweet night!</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+
+ <!--Expose-->
+<div id="Expose" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Jeremy" src="Assets/Jeremy.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Jeremy</h2>
+    <br />
+    <p>(One of your mean classmates, Jeremy, texted you at midnight)</p>
+<br />
+        <p id="jeremy">Do you know what I saw today? I saw you and Zach kissed in the placeholder!!!</p>
+<br />
+<p>You are INTO DUDES! I should've guessed it. No wonder you and Zach always have an usual connection in the show choir club. The rumor is true!!</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="expose-next"><h3>Please Jeremy, don't tell anyone!</h3>
+    </div>
+    </td>
+    </tr>
+    </table>
+    </div>
+
+ <!--Expose2-->
+<div id="Expose2" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Jeremy" src="Assets/Jeremy.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Jeremy</h2>
+    <br />
+    <p>I can't believe you did something like this. I feel disgusted. I can't imagine how your family would think about you.</p>
+<br />
+        <p>Well, I may or may not tell others. It depends on my mood.</p>
+</td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end4"><h3>(End this day)</h3>
+    </div>    
+    
+</td>
+</tr>
+    
+    </table>
+    </div>    
+   
+ <!--Saturday-->   
+<div id="Saturday" class="hidden"><table  width="100%" height="50%" style="position:relative">
+<tr>
+<h2>Saturday</h2>
+    <br />
+    <p>Zach asked you out today.</p>
+    <p>When you're ready to go, you received a call from your classmate, Amy. She's a gossip. Take care!</p>
+</tr>
+<tr>
+    <td width="18%" style="text-align: left"><img alt="Amy" src="Assets/Amy.png" height="70%" /></td>
+    <td style="text-align: left"><h2>Amy</h2>
+    <br />
+    <p>I haven't seen you for a while. How is it going? There's a rumor saying you're obessed with a sophomore boy. And you almost stay with him every day. Is it true? Haha, I'm just kidding. I think those people are too mean. I believe you are not. Anyway, tonight, I'll throw a party at my place. Why not come and have some fun?</p>
+    </td>
+</tr>
+    </table>
+<table width="100%" height="22%">
+<tr><td style="text-align: center; vertical-align: bottom;" width="20%"><div class="button" id="come"><h3>Sure, I'll come.</h3>
+    </div>
+</td>
+<td width="5%"></td>
+<td style="text-align: center; vertical-align: bottom;" width="50%"><div class="button" id="comeWithZach"><h3>Okay. Can I bring my friend, Zach, with me?</h3>
+    </div></td>
+<td width="5%"></td>
+<td style="text-align: center; vertical-align: bottom;" width="20%"><div class="button" id="notCome"><h3>Sorry, I can't go.</h3>
+    </div></td>
+</tr>
+
+
+
+</table></div>
+    
+<!--Don't go to the party-->
+<div id="DontGo"  class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Amy.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Amy</h2>
+    <p>Huh! I just knew it! Why can't you come? Are you going to date your little boyfriend? Did I almost ruin your sex plan with a man? Hahahahaha! You're gonna regret it!!!</p>
+</td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end5"><h3>It's not like what you think. I'm just too busy today. (Meet Zach instead and end this day)</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+<!--Go with Zach-->
+<div id="GoWithZach"  class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Amy" src="Assets/Amy.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Amy</h2>
+    <br />
+    <p>Of course you can. But is Zach your rumored boyfriend? Hahaha! I'm just kidding. I'll wait you guys at my house.</p>
+</td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="GoWithZach-next"><h3>(Go to Amy's house with Zach)</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+<!--Truth or Dare-->
+<div id="TruthOrDare" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>Truth or dare</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>You and Zach arrive at the party. Amy calls everybody to gather around and play Truth or Dare. You don't really like this game because you have secrets you can't tell. You try to be honest but sometimes you can't. The bottle starts to spin and your heart strats to pound. You pray you'll never be pointed at. No matter how hard you pray, the bottle points at you anyway. So, truth or dare? You have to make a choice. </p></td>
+</tr>
+<tr style="text-align: center" >
+<td width="25%"></td>
+<td width="25%" style="vertical-align: top"><a id="truth"><img alt="Truth" src="Assets/Truth.png" class="choice" />
+    <h3>Truth</h3></a>
+
+</td>
+
+<td width="25%" style="vertical-align: top"><a id="dare"><img alt="Dare" src="Assets/Dare.png" class="choice"/>
+<h3>Dare</h3>
+</a>
+</td>
+<td width="25%"></td>
+</tr>
+</table></div>
+    
+<!--Truth-->
+<div id="Truth" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="18%" style="text-align: left"><img alt="Amy" src="Assets/Amy.png" height="80%" /></td>
+    <td  width="4%"></td>
+    <td style="text-align: left"><h2>Amy</h2>
+    <br />
+    <p>Truth! I think you know what all of us want you to tell.</p>
+<br />
+<p>So tell me, is Zach your boyfriend?</p>
+<br />
+<p>Don't hesitate. Tell me the truth now!!!</p>
+    </td>
+</tr>
+<tr height="20%"><td colspan="3" style="text-align: center; vertical-align: bottom;"><div class="button" id="admit"><h3>Yes, I admit. Zach is my boyfriend.</h3>
+    </div>
+
+</td>
+</tr>
+<tr height="20%"><td colspan="3" style="text-align: center"><div class="button" id="negate">
+<h3>No, Zach is not my boyfriend. We're just friends.</h3>
+    </div>
+
+
+</td>
+</tr>    
+
+</table></div>
+    
+<!--Not admit-->
+<div id="NotAdmit"  class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Amy" src="Assets/Amy.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left">
+    <h2>Amy</h2>
+    <br />
+    <p>So, it looks like the rumors are totally bullshit. Hahaha! Awesome!</p>
+<br />
+<p>But don't try to lie to me. You know you can't lie in this game, don't you？I hope our friendship is not built on lies.</p>
+<br />
+<p>Alright, next round!</p>
+</td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="NotAdmit-next"><h3>Sorry, guys. I guess I'll leave now.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+<!--Not admit2-->
+<div id="NotAdmit2" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach-pissed" src="Assets/Zach-pissed.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(You and Zach left after the game) </p>
+<br />
+<p>I feel a little bit upset when you said I wasn't your boyfriend. At that moment, I just thought what you said was real. But I had to tell myself you were just lying. </p>
+<br />
+<p>Babe, will there finally be one day when we can tell the whole world we love each other? I don't think there'll be.</p>
+    </td>
+
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end5"><h3>Don't be too upset. We'll be fine. Good night, babe.</h3>
+    </div>
+
+</td>
+</tr>
+     
+
+</table></div>
+    
+<!--Resist-->
+<div id="Resist" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach-pissed" src="Assets/Zach-pissed.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p id="resistContent">(Towards everybody) He's lying! I'm not his boyfriend. Don't believe in him!!!</p>
+<br />
+<p>(Murmurs towards you) What is your problem? Why do you do this? I think I'll go home.</p>
+    </td>
+
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="resist-next"><h3>(Chase after Zach)</h3>
+    </div>
+
+</td>
+</tr>
+     
+
+</table></div>
+  
+<!--Resist2-->
+<div id="Resist2" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach-pissed" src="Assets/Zach-pissed.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(You apologized and explained to Zach, then he texts you at midnight)</p>
+<br />
+<p id="resistContent2">Sorry, I didn't calm down at the party. I understand why you did that. You told me it was just a game so they won't take it seriously. However, my unusual reactions made us more suspicious. But you know I still don't think we can do this again. What you picked was "truth"!! How can you make sure they won't take this seriously? I can't stand the pressure. Hope you can understand. Good night.</p>
+    </td>
+
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end5"><h3>I promise you I won't. Good night!</h3>
+    </div>
+
+</td>
+</tr>
+     
+
+</table></div>    
+    
+<!--Dare-->
+<div id="Dare" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>Dare</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>You chose "dare". You're asked to kiss a person. Amy or Zach? Which one do you want to pick? Will these party people take it seriously? Or maybe they are too drunk to remember everything.</p></td>
+</tr>
+<tr style="text-align: center" >
+<td width="25%"></td>
+<td width="25%" style="vertical-align: top"><a id="kissAmy"><img alt="Kiss Amy" src="Assets/KissAmy.png" class="choice" />
+    <h3>Kiss Amy</h3></a>
+
+</td>
+
+<td width="25%" style="vertical-align: top"><a id="kissZach"><img alt="Kiss Zach" src="Assets/StudyWithZach.png" class="choice"/>
+<h3>Kiss Zach</h3>
+</a>
+</td>
+<td width="25%"></td>
+</tr>
+</table></div>
+
+<!--Kiss Amy-->
+<div id="KissAmy"  class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Amy" src="Assets/Amy.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left">
+    <h2>Amy</h2>
+    <br />
+    <p>(You kissed Amy, then people cheered)</p>
+    <br />
+    <p>You're such a good kisser! I can't believe you don't have a girlfriend.</p>
+<br />
+<p>(Whispers to you) Maybe we should go out sometime.</p>
+<br />
+<p>Alright, next round!</p>
+</td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="kissAmy-next"><h3>Sorry, guys. I guess I'll leave now.</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+<!--Kiss Amy2-->
+<div id="KissAmy2" class="hidden"><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach-pissed" src="Assets/Zach-pissed.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>(You and Zach left after the game) </p>
+<br />
+<p>You kissed her... Although I knew that kiss was fake. But it just made me terrified. What if one day, you start to dig girls like all of them? I don't want to be abandoned...</p>
+<br />
+<p>I know we can't kiss in front of them. But are there still anything left for us? Are we still lovers if we can't do these things? I don't know. Maybe I shouldn't go with you tonight... See you.</p>
+    </td>
+
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="end5"><h3>I'm sorry, babe. That kiss doesn't mean anything. You're the one I love. Please forgive me. Good night!</h3>
+    </div>
+
+</td>
+</tr>
+     
+
+</table></div>
+    
+ <!--Sunday-->
+<div id="Sunday" class="hidden"><table  width="100%" height="100%">
+<tr>
+    <td colspan="4"><h2>Sunday</h2></td>
+</tr>
+<tr>
+<td colspan="4"><p>You had some fun this weekend but don't forget your assignments. You have to work on your assignments today.
+Do you want to study alone in your dorm? Or do you want to study in the library with Zach?</p></td>
+</tr>
+<tr style="text-align: center" >
+<td width="25%"></td>
+<td width="25%" style="vertical-align: top"><a id="studyWithZach"><img alt="Study with Zach" src="Assets/StudyWithZach.png" class="choice" />
+    <h3>Study with Zach</h3></a>
+
+</td>
+
+<td width="25%" style="vertical-align: top"><a id="studyAlone"><img alt="Study alone" src="Assets/End.png" class="choice"/>
+<h3>Study alone</h3>
+</a>
+</td>
+<td width="25%"></td>
+</tr>
+</table></div>
+    
+<!--StudyWithZach-->
+<div id="StudyWithZach" class="hidden" ><table  width="100%" height="100%" style="position:relative">
+<tr height="8%">
+    <td width="22%" style="text-align: left"><img alt="Zach" src="Assets/Zach.png" height="80%" /></td>
+    <td width="4%"></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>Hey, honey. It's been a great day working with you. You inspired me to write a romantic poem for my literature class. I think my teacher will like it although I can't specify my lover is a boy or a girl. But love is love! It's the same between boys!</p>
+<br />
+<p>But I do start to hear more rumors about us. They still try to make fun of us. I can't imagine what will happen if my parents know about us. Can they accept us?</p></td>
+</tr>
+
+<tr height="18%"><td colspan="3" style="text-align: center; vertical-align:top;"><div class="button" id="newWeek"><h3>Don't worry, Zach. I'll be fine. Good night!</h3>
+    </div>
+
+</td>
+</tr>
+    
+    </table>
+    </div>
+    
+
+</div>
+        
+    <div id="endState" class="hidden">
+      <!--End state: break up-->   
+<div id="Breakup" class="hidden"><table  width="100%" height="55%" style="position:relative">
+<tr>
+<h2>Game over</h2>
+    <br />
+    <p>Last night, you really had a bad dream. In the dream, Zach was crying all the time without telling you why. And you just stood there and stared at him, without doing anything. You wake up suddenly and find lots of missed calls from Zach. You call back immediately.</p>
+</tr>
+<tr>
+    <td width="20%" style="text-align: left"><img alt="Break up" src="Assets/Breakup.png" height="80%" /></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>I hate to say this but I have to...</p>
+    <br />
+    <p>I'm sorry. I think it's better for us just to stay friends. I'm not sure if you really love me. We didn't have a lot of happy time hanging out together. I feel like you always want to keep distance. I know there could be a reason. But I can't see our future in this way. It means nothing to me if we always pretend to be strangers. Sorry, I can't continue...</p>
+    </td>
+</tr>
+    </table>
+<table width="100%" height="22%">
+<tr><td style="text-align: center; vertical-align: bottom;" ><div class="button" id="retry"><h3>Play it again</h3>
+    </div>
+</td>
+
+</tr>
+
+
+
+</table></div>
+    
+  <!--End state: punished by your father-->   
+<div id="Punished" class="hidden"><table  width="100%" height="55%" style="position:relative">
+<tr>
+<h2>Game over</h2>
+    <br />
+    <p>It looks like you underestimate the power of the rumors. Don't forget it's just a small town. First the students knew you're gay. Then the teachers. Now your parents also heard about your relationship with Zach. They call you this morning.</p>
+</tr>
+<tr>
+    <td width="20%" style="text-align: left"><img alt="Father" src="Assets/Father.png" height="80%" /></td>
+    <td style="text-align: left"><h2>Father</h2>
+    <br />
+    <p>What did you do, my son? Your teachers have already told me about everything. That Zach boy??? What is wrong with you two?? (Sigh) I sent you to this school for a better education. Not for you to do something like this! Do you know how much shame you brought to your family? All of our neighbors regard us as monsters. They even think I might be that type of person as well...</p>
+     <br />
+    <p>Pack your stuff. I'll get you this afternoon. You need to transfer to another school.</p>
+    </td>
+</tr>
+    </table>
+<table width="100%" height="22%">
+<tr><td style="text-align: center; vertical-align: bottom;" ><div class="button" id="retry"><h3>Play it again</h3>
+    </div>
+</td>
+
+</tr>
+
+
+
+</table></div>
+    
+  <!--End state: happy ending-->   
+<div id="Love" class="hidden"><table  width="100%" height="55%" style="position:relative">
+<tr>
+<h2>Congratulations</h2>
+    <br />
+    <p>This is a day you will never forget. Neither will Zach. Because it marks a pivot point in your relationship. You get a call from Zach this morning.</p>
+</tr>
+<tr>
+    <td width="20%" style="text-align: left"><img alt="Zach" src="Assets/Love.png" height="80%" /></td>
+    <td style="text-align: left"><h2>Zach</h2>
+    <br />
+    <p>I had a dream last night. I dreamed you were being pulled away from me. I kept crying without stop. When I rolled out of my bed, I thought I should call you and tell you this.</p>
+     <br />
+    <p>It's been very happy to be with you these days. I feel like I can't live without you. In the past, I always felt shameful and didn't dare to admit that I'm gay. But now love gives me courage. No matter what will happen in the future, I'll always stand by you! I'll try to convince our parents to accept us. We'll find the solutions! And after graduation, we can move to a more friendly place and live happy ever after. </p>
+    </td>
+</tr>
+    </table>
+<table width="100%" height="22%">
+<tr><td style="text-align: center; vertical-align: bottom;" ><div class="button" id="retry"><h3>Play it again</h3>
+    </div>
+</td>
+
+</tr>
+
+
+
+</table></div>   
+    </div>
+    </div>
+    
+ 
+       
+
+
+</body>
