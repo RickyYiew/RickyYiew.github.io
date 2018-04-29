@@ -22,7 +22,7 @@ body {
 }
 
 p {
-    font-family: Lato, sans-serif;
+    font-family: helvetica, sans-serif;
     font-style: normal;
     font-weight: 100;
     font-size: 1em;
@@ -87,9 +87,9 @@ h5 {
 }
 
 h6 {
-    font-family: Lato, sans-serif;
+    font-family: helvetica, sans-serif;
     font-style: normal;
-    font-weight: 100;
+    font-weight: 250;
     font-size: 0.8em;
 
 }
@@ -257,7 +257,7 @@ font-weight: 350;
 
 #relationship h6{
 color: #69c6f4;
-opacity: 0.75;
+opacity: 0.85;
 }
 
 #exposure {
@@ -275,7 +275,7 @@ font-weight: 350;
 
 #exposure h6{
 color: #ea8c7d;
-opacity: 0.8;
+opacity: 0.9;
 }
 
 #bar1 {
