@@ -391,7 +391,7 @@ $(document).ready(function () {
       $("#Saturday").removeClass("center"); 
       $("#DontGo").addClass("center");
       $("#DontGo").removeClass("hidden"); 
-         exposure = exposure + 25;
+         exposure = exposure + 20;
          relation = relation + 15;
          updateBar();
     })
