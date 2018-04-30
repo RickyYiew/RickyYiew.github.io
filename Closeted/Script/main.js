@@ -99,7 +99,7 @@ $(document).ready(function () {
         $("#End").addClass("center");
         $("#End").removeClass("hidden");
         relation = relation - 15;
-        exposure = exposure - 10;
+        exposure = exposure - 15;
         updateBar();
     })
 
@@ -216,7 +216,7 @@ $(document).ready(function () {
         $("#Thursday").removeClass("center");
         $("#BesideSomeone").addClass("center");
         $("#BesideSomeone").removeClass("hidden");
-        relation = relation - 15;
+        relation = relation - 10;
         exposure = exposure - 10;
         updateBar();
     })
@@ -271,7 +271,7 @@ $(document).ready(function () {
         $("#End").addClass("center");
         $("#End").removeClass("hidden");
         relation = relation - 20;
-        exposure = exposure - 10;
+        exposure = exposure - 15;
         updateBar();
     })
 
@@ -375,7 +375,7 @@ $(document).ready(function () {
       $("#End").addClass("center");
       $("#End").removeClass("hidden");
          relation = relation - 20;
-         exposure = exposure - 10;
+         exposure = exposure - 15;
          updateBar();
     })
     
@@ -520,7 +520,7 @@ $(document).ready(function () {
       $("#End").addClass("center");
      $("#End").removeClass("hidden"); 
         relation = relation - 15;
-        exposure = exposure - 10;
+        exposure = exposure - 15;
         updateBar();
     })
     
