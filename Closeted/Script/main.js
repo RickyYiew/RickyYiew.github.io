@@ -87,7 +87,7 @@ $(document).ready(function () {
         $("#Classroom").addClass("center");
         $("#Classroom").removeClass("hidden");
         relation = relation + 10;
-        exposure = exposure + 20;
+        exposure = exposure + 25;
         updateBar();
     })
 
@@ -291,6 +291,8 @@ $(document).ready(function () {
         $("#Date").removeClass("center");
         $("#Woods").addClass("center");
         $("#Woods").removeClass("hidden"); 
+        exposure = exposure + 10;
+        updateBar();
      })
     
     $('#kiss1').click(function () {

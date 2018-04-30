@@ -1,7 +1,8 @@
 * {
     padding: 0;
     margin: 0;
-    -webkit-text-size-adjust: none;
+  
+   
 }
 
 html {
@@ -38,7 +39,7 @@ a:hover {
 
 h1 {
     position: relative;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif !important;
     font-style: normal;
     font-weight: 350;
     font-size: 1.8em;
@@ -47,7 +48,7 @@ h1 {
 
 h2 {
     position: relative;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif !important;
     font-style: bold;
     font-weight: 350;
     font-size: 1.5em;
@@ -56,7 +57,7 @@ h2 {
 
 h3 {
     position: relative;
-    font-family: Roboto Condensed, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif !important;
     font-style: normal;
     font-weight: 200;
     font-size: 1em;
@@ -70,7 +71,7 @@ h3 {
 
 h4 {
     display: inline;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     font-style: bold;
     font-weight: 300;
     font-size: 1.3em;
@@ -78,14 +79,14 @@ h4 {
 
 h5 {
     display: inline;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; !important
     font-style: bold;
     font-weight: 300;
     font-size: 1.3em;
 }
 
 h6 {
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif !important;
     font-style: normal;
     font-weight: 300;
     font-size: 0.8em;
@@ -250,6 +251,7 @@ margin-right: 3%;
 color: #69c6f4;
 font-family: Roboto Condensed, sans-serif;
 font-size: 1.2em;
+font-style: bold;
 font-weight: 350;
 }
 
@@ -268,6 +270,7 @@ height: 100%;
 color: #ea8c7d;
 font-family: Roboto Condensed, sans-serif;
 font-size: 1.2em;
+font-style: bold;
 font-weight: 350;
 }
 
