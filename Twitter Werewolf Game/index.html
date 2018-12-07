@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="p5.js"></script>
+    <script src="codebird.js"></script>
+    <script src="rita.js"></script>
+    <script language="javascript" type="text/javascript" src="p5.dom.js"></script>
+    <script src="sketch.js"></script>
+    <style>
+body {
+	padding: 0;
+	margin: 0;
+}
+@font-face {
+	font-family: American Typewriter;
+	src: url('Media/American Typewriter Regular.ttf');
+}
+.loadingText {
+	font-size: 34px;
+	font-family: Gotham, Helvetica Neue, Helvetica, Arial, " sans-serif";
+}
+#bookshelf {
+	margin-top: 0;
+}
+#title {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#start {
+	font-size: 25px;
+	margin-top: 0px;
+	font-family: American Typewriter, Helvetica, Arial;
+	animation: titleColor 4s infinite alternate;
+}
+.centerTool {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+.canvas {
+	animation: fadeIn 3s;
+}
+.inputClass {
+	background-color: #84ac86;
+	opacity: 0.8;
+	width: 300px;
+	height: 35px;
+	border-width: 0;
+	border-style: hidden;
+	border-radius: 30px;
+	font-family: arial;
+	font-size: 20px;
+	color: whitesmoke;
+	padding-left: 15px;
+	animation: fadeIn2 2s;
+}
+.button1 {
+	background-color: #c6cbb3;
+	width: 150px;
+	height: 30px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 24px;
+	color: #3a3d49;
+	padding-top: 4px;
+	animation: fadeIn 2s;
+}
+.button1:hover {
+	background-color: #1b252f;
+	width: 150px;
+	height: 30px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 24px;
+	color: #949494;
+	padding-top: 4px;
+}
+.button2 {
+	background-color: #c6cbb3;
+	width: 800px;
+	height: 40px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 30px;
+	color: #3a3d49;
+	padding-top: 7px;
+	animation: fadeIn 10s;
+}
+.button2:hover {
+	background-color: #1b252f;
+	width: 800px;
+	height: 40px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 30px;
+	color: #949494;
+	padding-top: 7px;
+}
+
+		.select {
+		width:280px;
+		height: 30px;
+		font-family: arial;
+		font-size: 16px;
+		text-align: left;
+		border-radius: 30px;
+		padding-left:15px;
+		padding-top:9px;
+		animation: fadeIn 2s;
+		}
+		
+
+.button3 {
+	background-color: #3a3d49;
+	width: 270px;
+	height: 30px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	color: #c6cbb3;
+	padding-top: 7px;
+	animation: fadeIn 2s;
+}
+.button3:hover {
+	background-color: #c6cbb3;
+	width: 270px;
+	height: 30px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	color: #3a3d49;
+	padding-top: 7px;
+}
+
+.display {
+   width:350px;
+   height:430px;
+animation: fadeIn 2s;
+		}
+		.sentence {
+			font-size:16px;
+			margin:2px;
+			padding:0;
+			font-family:American Typewriter, Helvetica, Arial;
+			font-color: #c6cbb3;
+		}
+		
+		.result {
+			width:680px;
+			height:100px;
+			animation: fadeIn 2s;
+		}
+		
+		.name2 {
+		background-color:#c6cbb3;
+		color: #3a3d49; 
+		width:590px;
+		height: 30px;
+		font-family: arial;
+		font-size: 16px;
+		text-align: left;
+		border-radius: 20px;
+		padding-left:15px;
+		padding-top:12px;
+		animation: fadeIn 2s;	
+		}
+		
+			.name1 {
+		background-color: #081b23;
+		color: #c6cbb3; 
+		width:590px;
+		height: 30px;
+		font-family: arial;
+		font-size: 16px;
+		text-align: left;
+		border-radius: 20px;
+		padding-left:15px;
+		padding-top:12px;
+		animation: fadeIn 2s;	
+		}
+		
+		.resultText {
+			width:580px;
+			height:100px;
+			font-size:18px;
+			font-family: American Typewriter, Helvetica, Arial;
+			color: #c6cbb3;
+			animation: fadeIn 2s;
+		}
+		
+		.identity {
+			width: 100px;
+			height:100px;
+				animation: fadeIn 2s;
+		}
+		
+		.iText {
+			font-size:16px;
+			font-family: arial;
+			color: #c6cbb3;
+			animation: fadeIn 2s;
+		}
+
+		.button4 {
+	background-color: #081b23;
+	width: 420px;
+	height: 35px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #b2b8a2;
+	padding-top: 12px;
+	animation: fadeIn 2s;
+}
+.button4:hover {
+	background-color: #c6cbb3;
+	width: 420px;
+	height: 35px;
+	border-radius: 10px;
+	text-align: center;
+	font-family: arial;
+	font-size: 22px;
+	color: #3a3d49;
+	padding-top: 12px;
+}
+
+ @keyframes titleColor {
+ 0% {
+color: #c6cbb3
+}
+ 50% {
+color: #3a3d49
+}
+ 100% {
+color: #c6cbb3
+}
+}
+ @keyframes fadeIn {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:1
+}
+}
+ @keyframes fadeIn2 {
+ 0% {
+opacity:0
+}
+ 100% {
+opacity:0.8
+}
+}
+</style>
+    </head>
+    <body bgcolor="#3a3d49">
+    <div id="page1">
+      <p align="center" "centerTool">
+      <video width="900" height="520" autoplay loop id="bookshelf">
+        <source src="Media/bookshelf_1.mp4" type="video/mp4">
+        <source src="Media/bookshelf_1.ogg" type="video/ogg">
+      </video>
+      </p>
+      <p align="center" class="centerTool"> <img src="Media/title.png" width="65%" id="title"></p>
+      <p id="start" align="center" class="centerTool">&mdash;&nbsp;&nbsp;Press Any Key to Start the Game&nbsp;&nbsp;&mdash;</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+********************************************************************************************
+
+			       Instructions on running Closeted
+
+********************************************************************************************
+
+FOR THE OPTIMAL EXPERIENCE:
+
+1) Please use Chrome as the browser to run this project.
+
+The font weight on Safari may be too light to see. No testing has been done on other browsers.
+The layout might be weirdly placed on other browsers.
+
+2) Please run it in full-screen. The recommended resolution is 1366 * 768.
+
+The layout can be responsive and optimized for the most common screen resolution. But it can't
+be applied to mobile version or any screen whose width is less than 1200.
+
+********************************************************************************************
+
+				What's needed to run Closeted
+
+********************************************************************************************
+
+Following stuff should all be in the zip file:
+
+- A index.html file
+- An Assets folder with 33 images
+- A Script folder with main.js and jquery.js
+- a Style folder with style.css
+
+You have to have them all to run this project, please don't change the position and names
+of any of them
+
+********************************************************************************************
+
+	                        How to run Closeted locally
+
+********************************************************************************************
+
+1) Download zip and extract files 
+2) Click the index.html file to run
+3) If your default browser is not Chrome, please right-click the index.html to open with Chrome
+
+********************************************************************************************
+
+	                        How to play Closeted online
+
+********************************************************************************************
+
+1) If you're connected with GT-WIFI or using GT VPN, you can access the live version here:
+http://dmcore.lmc.gatech.edu/~fyu48/Closeted/index.html 
+2) If not you can also access it here:
+https://rickyyiew.github.io/Closeted/index.html
