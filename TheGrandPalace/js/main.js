@@ -185,8 +185,6 @@ function preload() {
     // Preload animations
     arrow = loadAnimation('image/arrow1.png', 'image/arrow2.png', 'image/arrow3.png', 'image/arrow4.png');
 
-    // Preload sounds
-    empressSound = loadSound("sound/empressSound.mp3");
 
 }
 
