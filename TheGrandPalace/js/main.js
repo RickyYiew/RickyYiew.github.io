@@ -152,7 +152,7 @@ function preload() {
     string = loadImage("image/string.png");
     EMonster = loadImage("image/E-monster.png");
     GCMonster = loadImage("image/GC-monster.png");
-    court = loadImage("image/court.png");
+    court = loadImage("image/courtRoom.png");
     courtLocation = loadImage("image/courtLocation.png");
     redParty = loadImage("image/redParty.png");
     redDouble = loadImage("image/redDouble.png");
