@@ -409,10 +409,10 @@ function intro() {
 
     count = count + 1;
     if (count === 40) {
-        empressSound.setVolume(0.2);
+        //empressSound.setVolume(0.2);
         //empressSound.play();
-        empressSound.setLoop(true);
-        empress = empress1;
+        //empressSound.setLoop(true);
+        //empress = empress1;
     }
     if (count > 30) {
         image(empressRoom, 0, 22, 1030, 522);
@@ -2260,7 +2260,7 @@ function transitionBG() {
         
     bgRectCount = bgRectCount + 1; 
     fill(255, bgRectA);
-    rect(0, 0, 1230, 542);
+    rect(0, 0, 1230, 544);
     if (bgRectCount < 24) {
     bgRectA = bgRectA + 255/24
     } 
