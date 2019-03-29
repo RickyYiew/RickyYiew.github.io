@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+
+    <script language="javascript" type="text/javascript" src="lib/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/p5.play.js"></script>
+    <script language="javascript" type="text/javascript" src="lib/p5.sound.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Bevan|Roboto" rel="stylesheet">
+
+    <title>The Grand Palace</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            background-color: black;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #sketchHolder {
+            width: 1230px;
+            height: 694px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        #skip {
+            width: 100px;
+            height: 54px;
+            opacity: 1;
+            animation-name: easeIn;
+            animation-duration: 2s;
+        }
+        
+        #skip:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        } 
+
+        #dialogName {
+            font-family: 'Bevan', cursive;
+            color: #3f3f3f;
+            font-size: 18px;
+            opacity: 0;
+            animation-name: easeIn;
+            animation-duration: 2s;
+            animation-delay: 2.5s;
+            animation-fill-mode: forwards;
+        }
+
+        #dialogText {
+            font-family: Helvetica, sans-serif;
+            font-size: 16px;
+            width: 945px;
+            height: 70px;
+            line-height: 1.25;
+            opacity: 0;
+            animation-name: easeIn;
+            animation-duration: 2s;
+            animation-delay: 2.5s;
+            animation-fill-mode: forwards;
+        }
+        
+         #sceneName {
+            font-family: 'Bevan', cursive;
+            color: #3f3f3f;
+            font-size: 18px;
+            opacity: 0;
+            animation-name: easeIn;
+            animation-duration: 2s;
+            animation-delay: 2.5s;
+            animation-fill-mode: forwards;
+        }
+        
+         #sceneText {
+            font-family: Helvetica, sans-serif;
+            font-size: 16px;
+            width: 1140px;
+            height: 70px;
+            line-height: 1.25;
+            opacity: 0;
+            animation-name: easeIn;
+            animation-duration: 2s;
+            animation-delay: 2.5s;
+            animation-fill-mode: forwards;
+        }
+        
+          #bgName {
+            font-family: 'Bevan', cursive;
+            color: #3f3f3f;
+            font-size: 18px;
+            opacity: 0;
+            animation-name: easeIn;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        }
+        
+         #bgText {
+            font-family: Helvetica, sans-serif;
+            font-size: 16px;
+            width: 1140px;
+            height: 70px;
+            line-height: 1.25;
+            opacity: 0;
+            animation-name: easeIn;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes easeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #proceed {
+            width: 1024px;
+            height: 644px;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        #mask {
+            width: 1022px;
+            height: 494px;
+            background-color: #222222;
+            opacity: .75;
+        }
+        
+        #bigMask {
+            width: 1230px;
+            height: 545px;
+            background-color: #222222;
+            opacity: .75;
+        }
+        
+         #planMask {
+            width: 1022px;
+            height: 495px;
+            background-color: #ffffff;
+            opacity: 0;
+            animation-name: whiteTrans;
+            animation-duration: 0.8s;
+        }
+        
+        @keyframes whiteTrans {
+            0%   {opacity: 0;}
+            50%  {opacity: 1;}
+            100% {opacity: 0;}
+        }
+
+        .choice {
+            width: 550px;
+            height: 40px;
+            font-family: Helvetica, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #F1DFB7;
+            border-radius: 5px;
+        }
+
+        .choice:hover {
+            background-color: #efefef;
+            cursor: pointer;
+        }
+
+        .next {
+            width: 550px;
+            height: 45px;
+            font-family: 'Bevan', cursive;
+            color: #3f3f3f;
+            font-size: 18px;
+            text-align: center;
+            line-height: 50px;
+            background-color: #F1DFB7;
+            border-radius: 5px;
+        }
+
+        .next:hover {
+            background-color: #efefef;
+            cursor: pointer;
+        }
+
+        .smallOp {
+            width: 40px;
+            opacity: 0;
+            animation-name: opinion;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+        }
+
+        .bigOp {
+            width: 70px;
+            opacity: 0;
+            animation-name: opinion;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+        }
+
+        .midOp {
+            width: 60px;
+            opacity: 0;
+            animation-name: opinion;
+            animation-duration: 0.3s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes opinion {
+            from {
+                transform: scale(0);
+                opacity: 0
+            }
+            to {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+        
+        .head {
+        width: 66px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="p5_loading" class="loadingclass">LOADING...</div>
+    <div id="sketchHolder"></div>
+
+
+</body>
