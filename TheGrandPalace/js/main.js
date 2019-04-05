@@ -96,22 +96,23 @@ var introGeneral = true,
     ERepeat = false,
     update = false;
 
-var bgStoryText = ["Hundreds of years ago, in the land of China, a lasting war devastated people's lives. The country was ripped into separate pieces while its people were brutally robbed and struggled to survive in misery.", "But one night in a small village, people reported seeing eerie lights emitting from a house. They rushed there to see what was going on but only to see the birth of a healthy boy. Without knowing why, they all thought they saw a dragon at that moment. They knew he was destined to make a change.", "The boy grew up quickly and became the hero of the country. He led a strong army to defeat all of the warlords and unified the entire China. He brought peace and order back to this place.", 'While people knelt down before him and touched the ground with their forehead to express thankfulness, this hero declares himself as the "Son of the Heaven". He said it was the "Mandate of the Heaven" for him to rule this land and lead its people. He rose up to the throne and became the emperor of China.', "That was the story you heard about how your father became the emperor. While it might not be absolutely accurate, at least it gave you a sense of how holy this position was. Now, with years gone by, your father got old and sick. He knew he couldn't be on the throne for too long.", "However, he had already planned on this. He set you as the crown prince of the dynasty, heir to the throne. He asked the best teachers to teach you literature, combat skills, politics, and art. He hoped one day you could rule this nation as good as him.", "At the age of 17, your father passed away. As the young successor, there's no time for you to cry. You need to get prepared for the coronation.", "As promised to your father, you were determined to be a great emperor and make best decisions for your people.", "However, sitting on the throne was never an easy task. What you saw was the glamorous power as the emperor. But what you didn't see was all of the political drama and fights behind it.", "Are you ready to be an emperor? Can you lead your country towards the greatest era? Or can you even survive?"]
-var introText = ["However, it’s not always easy to be an emperor. There will be so many threats along your way. You must stay alert and make the best decisions.", "Learn this lesson well: the emperor cannot rule on a whim. You will need allies to support your decisions. People in the court can refuse to proceed with your decisions if nobody stands by you. ", "You’ll meet different people in the court, such as the Grand Chancellor and the Eunuch. You must distinguish those who threaten your rule. ", "Mother will always support you. Do you have any questions for me?", " ", "Excellent, my son! It's such a pleasure to see the determination on your young face! To help your endeavors, I'll give you a family heirloom. The magical silk painting on your right will warn you if powers in your court are improperly balanced. ", "The Grand Chancellor is at the top while the Eunuch is at the bottom. You’re the man wearing a yellow robe, hanging precariously in the middle. This can show you the current threats of both sides. It will dynamically change based on your choices. ", "When one side is too powerful, that political player will draw you closer. You need to stay away from both sides. If you get caught by either side, you will face a rebellion.", "Now the Grand Chancellor is more powerful so you're closer to him. Try to think about how you can use another force to pull you away from him. ", "Now I’ll tell you the first mission as an emperor. ", "By now you have heard your father's report of suspicious military activity along our border with Mongolia. They may invade sooner than we thought. Our preparation towards the war has been halted due to your father’s death. We don’t have much time left. ", "To make matters worse, the influencers in your court are preoccupied squabbling over their personal interests. You need to try your best to ask them to enforce the policy to prepare for the war.", "The bar at the top will show your progress towards the war preparation.", "You need to fill the bar in five days. Meanwhile, be aware of potential political threats!", "Good luck, my son! I believe you can bring glory to our dynasty."]
+var bgStoryText = ["Hundreds of years ago, in the land of China, a lasting war devastated people's lives. The country was ripped into separate pieces while its people were brutally robbed and struggled to survive in misery.", "But one night in a small village, people reported seeing eerie lights emitting from a house. They rushed there to see what was going on but only to see the birth of a healthy boy. Without knowing why, they all thought they saw a dragon at that moment. They knew he was destined to make a change.", "The boy grew up quickly and became the hero of the country. He led a strong army to defeat all of the warlords and unified the entire China. He brought peace and order back to this place.", 'While people knelt down before him and touched the ground with their forehead to express thankfulness, this hero declares himself as the "Son of the Heaven". He said it was the "Mandate of the Heaven" for him to rule this land and lead its people. He ascended to the throne and became the emperor of China.', "That was the story you heard about how your father became the emperor. While it might not be absolutely accurate, at least it gave you a sense of how holy this position was. Now, with years gone by, your father got old and sick. He knew he couldn't be on the throne for too long.", "However, he had already planned on this. He set you as the crown prince of the dynasty, heir to the throne. He asked the best teachers to teach you literature, combat skills, politics, and art. He hoped one day you could rule this nation as good as him.", "When you were at the age of 17, your father passed away. As the young successor, there's no time for you to cry. You need to get prepared for the coronation.", "As promised to your father, you were determined to be a great emperor and make best decisions for your people.", "However, sitting on the throne is never an easy task. You saw all of the glamorous power as the emperor but you did not see all of the political drama and fights behind it.", "Are you ready to be an emperor? Can you lead your country towards the greatest era? Or can you even survive?"]
+var introText = ["However, it’s not always easy to be an emperor. There will be so many threats along your way. You must stay alert and make the best decisions.", "Learn this lesson well: the emperor cannot rule on a whim. You will need allies to support your decisions. People in the court can refuse to proceed with your decisions if nobody stands by you. ", "You’ll meet different people in the court, such as the Grand Chancellor and the Eunuch. You must distinguish those who threaten your rule. ", "Mother will always support you. Do you have any questions for me?", " ", "Excellent, my son! It's such a pleasure to see the determination on your young face! To help your endeavors, I'll give you a family heirloom. The magical silk painting on your right will warn you if powers in your court are improperly balanced. ", "The Grand Chancellor is at the top while the Eunuch is at the bottom. You’re the man wearing a yellow robe, hanging precariously in the middle. This can show you the current threats of both sides. It will dynamically change based on your choices. ", "When one side is too powerful, that political player will draw you closer. You need to stay away from both sides. If you get caught by either side, you will face a rebellion.", "Now the Grand Chancellor is more powerful so you're closer to him. Try to think about how you can use another force to pull you away from him. ", "Now I’ll tell you the first mission as an emperor. ", "By now you have heard your father's report of suspicious military activity along our border with the Mongols. They may invade sooner than we thought. Our preparation towards the war has been halted due to your father’s death. We don’t have much time left. ", "To make matters worse, the influencers in your court are preoccupied squabbling over their personal interests. You need to try your best to ask them to enforce the policy to prepare for the war.", "The bar at the top will show your progress towards the war preparation.", "You need to fill the bar in five days. Meanwhile, be aware of potential political threats!", "Good luck, my son! I believe you can bring glory to our dynasty."]
 var GCIntroText = ["Grand Chancellor Li is the emperor’s royal advisor and the head of the court. Li has been serving for the court for more than 40 years. He has accumulated much prestige and many allies in the court. ", "He might be helpful in dealing with some of the national issues. But he can also easily use his power to influence the court and override your commands. You must be careful, my son!"];
 var EIntroText = ["We all know that Eunuchs are the royal servants who take care of our daily life in the inner chamber of the palace. You might regard them as the most trustworthy companions since you have grown up with them.", "But you would do well to remember they can be political allies as well. As far as I know, Eunuch Wang has connection with some people who can speak for you. I'm pretty sure Minister Chen is one of his puppets in the court.", "When you don’t trust those scholar officials in the court, try giving some of your power to the eunuchs. But still, make sure that they don't become too powerful. They may be good at flattery, but they can make hell for you when they have too much influence. "]
 var strategyIntroText = ["My son, you need to remember the only way to maintain your power is to have a balance of Yin and Yang. Everyone is capable of causing trouble for you at a certain point. You have to maintain your power to do what is best. ", "Consider playing one group against the other to humble them. When the two groups are busy clashing with each other, you can stand firmly in the middle."]
 var day1Text = ["Good morning, your majesty! I'm Grand Chancellor Li. It’s our honor to serve you and help you solve problems for our country. Please allow me to represent the whole court to give you a brief introduction of the work we do.", "Everyday we’ll discuss a major issue in the court. The other ministers and I might offer different solutions to an issue. Ultimately, you decide which course of action to follow.", "But please be cautious, your majesty. If a majority of your ministers don’t agree with your decision, we will not be able to execute it.", "I have encourged the whole court to publicly express their opinions when a solution is proposed. You will be able to know how many people support the idea.", "Good morning, your majesty! Please allow me to introduce myself. My name is Minister Chen. I have served as a royal advisor to make contribution to our country for a long time.", "I firmly believe a decision maker will be enlightened if he can listen to different opinions. So, I will bring an alternative idea everyday to give you more options.", "Now it's time to start our discussion today.", "I am sure you have heard of the impending war with the Mongolians. The government needs a consistent source of revenue to maintain our advantage in the potential war. We shall discuss a solution today.", "Here’s my solution. I notice we have spent a huge amount of money on your recreational activities. I think being thrifty is always a good virtue every emperor follows.", "So, I would suggest you to cut your recreational expenses. Then we can use the money to support our army.", "I don’t think we should make our emperor sacrifice himself.", " My solution is to impose more taxes on the businessmen in the south. Their business is booming. But they have not been properly regulated.", "If we start to impose taxes on them. It'll be a constant revenue for the war preparation.", "Now, please make the decision, your majesty."
 ]
 var day1Name = ["Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Minister Chen", "Minister Chen", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand Chancellor Li"]
-var eunuchIntroText = ["I'm deeply sorry to see you look tired and pensive after court today. I know it’s tough to hold court and make people listen to you on the first day. As your closest and most loyal servant, I'd like to give you some suggestions if you would do me the honor.", "Grand Chancellor Li might seem helpful at this moment, but please be careful. He has plenty of allies in the court. He can easily manipulate and control what’s going on there.", "Your ancestors realized the importance of balancing the power of the Grand Chancellor, so they established a secret agency called Eastern Depot. It’s run by us, the eunuchs. ", "We can help the emperor to probe into those ministers’ life in case they are plotting anything evil. If it is your will, we can investigate the Grand Chancellor and his allies.", "In the meantime, I suggest you to find someone who can speak for you in the court.", "I think Minister Chen is a wise and personable figure. He also has the courage to stand against the Grand Chancellor. He’s an influential person and has the potential to build up a party to fight against the Grand Chancellor.", "Why don’t we give him some rewards and bring in some of his allies? I think there are openings in the court we can fill with his people. ", "I can always be of service if you should require it.", "Thanks for trusting me, your majesty.", "I will bring your message to Minister Chen. You should expect to see some differences in court tomorrow."]
+var eunuchIntroText = ["I'm deeply sorry to see you look tired and pensive after court today. I know it’s tough to hold court and make people listen to you on the first day. As your closest and most loyal servant, I'd like to give you some suggestions if you would do me the honor.", "Grand Chancellor Li might seem helpful at this moment, but please be careful. He has plenty of allies in the court. He can easily manipulate and control what’s going on there.", "Your ancestors realized the importance of balancing the power of the Grand Chancellor, so they established a secret agency called Eastern Depot. It’s run by us, the eunuchs. ", "We can help the emperor to probe into those ministers’ life in case they are plotting anything evil. If it is your will, we can investigate the Grand Chancellor and his allies.", "In the meantime, I suggest you to find someone who can speak for you in the court.", "I think Minister Chen is a wise and personable figure. He also has the courage to stand against the Grand Chancellor. He’s an influential person and has the potential to build up a party to fight against the Grand Chancellor.", "Why don’t we give him some rewards and bring in some of his allies? I think there are openings in the court we can fill with his people. ", "I can always be of service if you should require it.", "Thanks for trusting me, your majesty.", "I will bring your message to Minister Chen. You should expect to see a change in power."]
+var day1NightText = ["Good evening, my dear son. How was your first day to hold court? I know it must have been a long day for you. Mother will continue to help and share you with my wisdom.", "You must have noticed there are two political forces in the court. But those people are snobbish and shift their ground quickly. If one party's solution has been approved and enforced, this party would have more allies converted from the opposite side. But nothing would happen if no agreement has been reached in the court.", "However, this change can be offset by your other actions after court. Think about how you can use this opportunity as an advantage to seek balance.", "You would do well to know that the party division in the court actually corresponds to your position on the magical silk painting. If you're closer to the eunuch, you will see more people wearing blue in the court. Conversely, you will see more people in red if you're closer to the Grand Chancellor.", "I hope these suggestions can clear out your confusion and help you overcome the difficulties. And don't forget to make sure we are on the right track towards war preparation. Good luck and may the ancestors protect you.",  "Please retreat, my son. I shall go to bed soon."]
 var day2Text = ["Good morning, your majesty! The economy in the south is booming. The government has perceived a noticeable gain in the tax income. Today, the court will discuss where the government should spend this money.", "Please allow me to present my opinion on this.", "The raise in tax income comes from the business industry in the south. So, I think we should do something to reward the businessmen's hard work.", "I would advise us to spend the money on building a canal in the south. The canal can improve the efficiency in transportation, which can be a boost in more future tax income.", "Your majesty, I'm unable to agree with Grand Chancellor's idea. I'll provide my insight for your reference.", "I think the imminent war is our urgency. We still lack weapons and armors to equip our newly recruited army.", "Though the southern economy is important, I still suggest us to put war preparation as our first priority and spend money on buying more equipment.", "Now, please make the decision, your majesty."]
 var day2Name = ["Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand Chancellor Li"]
 var day3Text = ["Greetings, your majesty. We have finished recruiting this year’s conscript labor. They are ready to serve our country. Today, the court needs to figure out which tasks should be assigned to them.", "Please allow me to present my opinion on this.", "I believe we should send our workers to construct the infrastructure in the South, especially the canal I have proposed yesterday.", "I know some people in the court might not be able to agree with me. But like what I have said before, this will definitely bring benefits to the economic development, which will bring a constant raise in the governmental revenue.", "Unfortunately, I have to stand up against Grand Chancellor's idea again.", "I think we still need a stronger defense system at the border. We need to prioritize the war preparation since we don't have much time left.", "I would suggest us to send the workers to build the defense at the border.", "Now, please make the decision, your majesty."]
 var day3Name = ["Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand chancellor Li"]
 var day4Text = ["Good morning, I hope all is well with you. Every year, the delegates from Korea will come to our nation and trade their local specialty for our precious treasure. I would advise the court to discuss what we want to import specifically from this trade.", "Please allow me to present my opinion on this.", "I believe we should ask Koreans to trade their best horses with us.", "I am fully aware of the urgency of preparing for the war, so I would suggest us to import more horses to ease the shortage of our war supplies.", "I'm sorry. I think Grand Chancellor totally missed the point there.", "I think the best thing from Korea is their ginseng and diamonds. Those are the somthing we don't usually produce. It would do us good if we import them.", "We can tackle the horse supply problem in another way although I don't believe this is our most urgent issue right now.", "Now, please make the decision, your majesty."]
 var day4Name = ["Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand chancellor Li"]
-var day5Text = ["Good morning, your majesty! I think we have been discussiong a lot about the preparation for the war. But there’s one more thing left. We need to appoint a general to lead our army. This person should be able to bring victory to us.", "Please allow me to present my opinion on this.", "General Yang is a renowned general with lots of experience in military strategies and combat skills. He fought with your father and won most of the battles. He was a national legend to us all. ", "Although he has retired, I believe if we show our greatest sincerity, he’ll be willing to come back and serve our country again.", "Unfortunately, I have to disagree with Grand Chancellor since I believe General Yang is too old for this position.", "I think we need some new blood and a truly loyal person to lead our army. Why not just choose one of your closest friends as the general?", "Eunuch Wang has been serving you and giving you support for years. He always knows what’s the best for our country. So, I would also believe he’ll be a good fit to lead the army.", "Now, please make the decision, your majesty."]
+var day5Text = ["Good morning, your majesty! I think we have been discussiong a lot about the preparation for the war. But there’s one more thing left. We need to appoint a general to lead our army. This person should be able to bring victory to us.", "Please allow me to present my opinion on this.", "General Yang is a renowned general with lots of experience in military tactics and combat skills. He fought with your father and won most of the battles. He was a national legend to us all. ", "Although he has retired, I believe if we show our greatest sincerity, he’ll be willing to come back and serve our country again.", "Unfortunately, I have to disagree with Grand Chancellor since I believe General Yang is too old for this position.", "I think we need some new blood and a truly loyal person to lead our army. Why not just choose one of your closest friends as the general?", "Eunuch Wang has been serving you and giving you support for years. He always knows what’s the best for our country. So, I would also believe he’ll be a good fit to lead the army.", "Now, please make the decision, your majesty."]
 var day5Name = ["Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand chancellor Li"]
 var GCMeet0Text = ["I’m suspicious some evil people have been plotting something dangerous in court. Minister Chen and his allies have been pulling us into a strange direction. I’m afraid we will be out of control soon.", "Meanwhile, you should know it’s not a good sign to let eunuch interfere the politics. I’m worried that you might be taken advantage by some notorious people. There are some ways I can help you if you’re interested.", "We need to have checks and balances with Minister Chen’s people. The Minister of Personnel has run an assessment on the officials in the court. We have found some Chen’s allies were not qualified for their positions.", "I would advise you to fire them to avoid any potential threats.", "What is your thought on this, your majesty?", "I really appreciate your trust in me, your majesty.", "I'll fire those unqualified officials as soon as possible. Don't worry about the vacant positions. I'll bring some brilliant people to fill in."]
 var GCMeet1Text = ["I have some news from the Ministry of Justice. Please allow me to present it if you're interested.", "They found some of Minister Chen’s allies might be involved in corruption. Rumor has it that they've been accepting bribes from the arms dealers. That’s why they don’t care about our people’s lives but care too much about the war!", "It aligns with the Confucian ideals and doctrines that the officals should always stay clean and be mindful of the people. I would advise you to arrest those dishonest people to make sure our morality won't be polluted.", "Please let me know what are your thoughts on this.", "I really appreciate your trust in me, your majesty.", "I'll do as you wish and arrest those who threatened our integrity. Don't worry about the vacant positions. I'll bring some brilliant people to fill in."]
@@ -121,9 +122,9 @@ var EMeet1Text = ["As you wish, the Eastern Depot has been spying on Grand Chanc
 var EMeet2Text = ["The Eastern Depot continued to investigate the corruption associated with Grand Chancellor Li and his allies. And unfortunately, we found something even more notorious. I don't know if it is appropriate to say.", "Please don't be mad after you hear this, your majesty. We've found a letter saying someone is plotting a rebellion against you! Upon our speculation, we think the mastermind behind all of this is probably Grand Chancellor Li.", "You have rejected some of his proposals. He can't do whatever he wants. He might start to think you're one of his threats! I hope nothing bad will happen at this point. But I would advise you to take action before it's too late.", "Does this sound fair, your majesty?", "Thanks for trusting me, your majesty.", "I will immediately instruct the Eastern Depot to arrest Grand Chancellor Li and get the whole account of the conspiracy. We shall put an end to this traitor of our dynasty."]
 var lastNightText = ["My dear son, how have you been as a new ruler of our country? I believe you have demonstrated a strong ability to maintain your power and uphold the justice. You managed to prevent any influencers in the court from exceeding your power. You should be proud of what you have achieved.", "But what truly concerns me is still the war. I had a bad dream last night. I dreamed about your father warning me of the horrible future. I saw lots of fire and terror. My son, I have a feeling that the war will break out pretty soon.", "Is our country well-prepared for fighting against the invasion? Everytime when I think about this question, I would suffer from a severe headache. But I know you're the leader of our country. I believe you have tried all you can to get us prepared.", "We shall see what the future holds for our dynasty. May the odds be with you.", "Please retreat, my son. I shall go to bed soon."]
 var ending1Text = ["However, with the solid preparation and constant revenue to support the war, your excellent troops immediately react and vehemently fight back. They make it almost impossible for the intruders to move any farther into your land. Eventually, they have to flee away and pay for the damage they have done.", "After the war, you gain much prestige because of the far-sighted decisions you made for the war preparation. People kneel down before you to praise your wisdom and leadership. They start to believe you can always choose the right decision for this country.", 'From that day on, nobody would ever oppose to what you say. You successfully identify a few disloyal people in court and sweep them out of the palace. You have solidified your power and maintained the position in throne. You proved to the world that you are the most powerful one above all under heaven.', "With the efficiency gained from your unified power, you continue to make contributions for the people in this country and lead your dynasty to a golden era. You have been worshipped by your descendants and memorized as one of the greatest emperors of all time."]
-var ending2Text = ["Due to the poor preparation, the valiant Mongolian warriors quickly crumble the border defense. They go all the way down to the inner heart of the country, staring greedily at the wall of the capital city.", "Meanwhile in the palace, people are occupied by terror and chaos. Everybody has shown their true face and only cares about their own interests. Your guards and servants, who seemed loyal to you in the past, all abandon you and flee for their lives.", "Although you make every attempt to bring everything back to order, it just comes in vain when the enemy finally breaks into the palace walls. They rob all they can carry and burn all they can not. The palace collapses down to earth. And the whole city is trapped in fire for a week.", "Some ministers and servants in the palace manage to escape. But nobody knows what has happened to you. Since then, no one has ever seen you again, even nor your body."]
+var ending2Text = ["Due to the poor preparation, the valiant Mongolian warriors quickly crumble the border defense. They go all the way down to the inner heart of the country, staring greedily at the wall of the capital city.", "Meanwhile in the palace, people are occupied by terror and chaos. Everybody has shown their true face and only cares about their own interests. Your guards and servants, who seemed loyal to you in the past, all abandon you and flee for their lives.", "Although you make every attempt to bring everything back to order, it just comes in vain when the enemy finally breaks into the palace walls. They rob all they can carry and burn all they can not. The palace collapses down to earth. And the whole city is trapped in fire for a week.", "Some ministers and servants in the palace manage to escape. But nobody knows what has happened to you. Since then, no one has ever seen you again nor your body."]
 var ending3Text = ["When he was presented with tons of coins from the southern businessmen, he knew the answer to this question was simple. He can't resist accepting brides, especially when he has so much power in his hand.", "However, he knows there is always one person who gets in his way. That person is you. Especially when his dark secrets have been gradually disclosed by you, Li thinks he needs to eliminate you now or never.", "Quickly, he uses his unprecedented power to fill the court with his allies and stop them from speaking against him. Then Li buys off the royal guards and asks them to arrest you.", "Without even realizing what has happened, you have been locked up in a small room. The door of that room will only open at noon to give you a meal. But for the rest of the time, it is securely locked. Since then, you never get a chance to get out and don't know what happens outside."]
-var ending4Text = ["He gets more and more involvement in the politics and hopes everything can go as he wishes. However, he finally realizes no matter how hard he tries, there will always be one person beyond him. That is you.", "Wang still remembers how he was brutally punished when he accidentally knocked over your teacup when you were still a kid. He knows he will revenge one day. And this day finally comes.", "Taking advantage of your trust, he places poison in your teacup and easily kills you. With his unprecedented power, everyone knows who murdered the emperor but no one has ever dared to point it out.", "He props up a new puppet emperor to the throne but controls everything behind. The whole government is full of dirty corruptions and evil machinations. People are heavily taxed and live on the edge of starvation. Since then, the dynasty has fallen into the darkness."]
+var ending4Text = ["He gets more and more involvement in the politics and hopes everything can go as he wishes. However, he finally realizes no matter how hard he tries, there will always be one person beyond him. That is you.", "Wang still remembers how he was brutally punished when he accidentally knocked over your teacup when you were still a kid. He knows he will revenge one day. And this day finally comes.", "Taking advantage of your trust, he places poison in your teacup and easily kills you. With his unprecedented power, everyone knows who murdered the emperor but no one has ever dared to point it out.", "He props up a new puppet emperor to the throne but controls everything from behind. The whole government is full of dirty corruptions and evil machinations. People are heavily taxed and live on the edge of starvation. Since then, the dynasty has fallen into the darkness."]
 
 
 function preload() {
@@ -220,6 +221,10 @@ function draw() {
             eunuchIntro();
         }
 
+    }
+    
+    if (status === "day1Night") {
+        day1Night();
     }
 
     if (status === "day2") {
@@ -366,13 +371,12 @@ function bgStory() {
         proceed.mouseClicked(updateTextBgStory);
     }
     
-     if (count >= 150) {
+     if (count >= 160) {
         tint(255, 255);
         animation(arrow, 1140, 585);
-        if (count === 150) {
+        if (count === 160) {
             arrow.visible = true;
         }
-
 
     }
     
@@ -396,7 +400,7 @@ function bgStory() {
         sceneText.position(45, 610);
 
         proceed = createButton('');
-        proceed.id('proceed');
+        proceed.id('proceedBig');
         proceed.parent("sketchHolder");
         proceed.position(0, 50);
         
@@ -504,24 +508,24 @@ function intro() {
 
     }
 
-    if (count > 100 && count < 130) {
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(empressLocation, 330, 260);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(empressLocation, 330, 260);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(empressLocation, 330, 260);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
 
     if (count < 102) {
@@ -812,31 +816,31 @@ function day1() {
 
     imageMode(CORNER);
 
-    if (count > 100 && count < 130) {
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(courtLocation, 380, 260);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         tint(255, 255);
         image(courtLocation, 380, 260);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(courtLocation, 380, 260);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
 
     if (count < 102) {
         transition();
     }
-    if (count === 300) {
+    if (count === 270) {
         proceed.mouseClicked(updateTextDay1);
     }
 
@@ -918,10 +922,10 @@ function day1() {
         GCOut();
     }
 
-    if (count >= 300) {
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 940, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1001,37 +1005,37 @@ function eunuchIntro() {
         }
     }
 
-    if (count > 100 && count < 130) {
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(studyLocation, 380, 260);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(studyLocation, 380, 260);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(studyLocation, 380, 260);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
 
     if (count < 102) {
         transition();
     }
-    if (count === 300) {
+    if (count === 270) {
         proceed.mouseClicked(updateTextEunuchIntro);
     }
 
-    if (count >= 300) {
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 940, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1065,11 +1069,167 @@ function eunuchIntro() {
     }
 }
 
+function day1Night() {
+  count = count + 1;
+ 
+    if (count > 30) {
+        image(empressRoom, 0, 22, 1030, 522);
+        // Change the images of the Empress Dowager
+        if (i % 2 == 0) {
+            image(empress2, 448, 137);
+        } else {
+            image(empress1, 448, 137);
+        }
+        // the animation of the lantern lights
+        ellipseMode(RADIUS);
+        fill(249, 227, 173, lightA);
+        strokeWeight(0);
+        ellipse(82, 123, lightR2, lightR2);
+        ellipse(940, 123, lightR2, lightR2);
+        fill(246, 220, 124);
+        ellipse(82, 123, lightR1, lightR1);
+        ellipse(940, 123, lightR1, lightR1);
+        lightCount = lightCount + 1;
+        if (swell === true) {
+            lightR1 = lightR1 + 7 / 180;
+            lightR2 = lightR2 + 12 / 180;
+            lightA = lightA - 120 / 180;
+        }
+        if (lightCount === 180) {
+            swell = false;
+        }
+        if (swell === false) {
+            lightR1 = lightR1 - 7 / 180;
+            lightR2 = lightR2 - 12 / 180;
+            lightA = lightA + 120 / 180;
+        }
+        if (lightCount === 360) {
+            lightR1 = 50;
+            lightR2 = 55;
+            swell = true;
+            lightCount = 0;
+        }
+
+        image(lanternLeft, 40, 40);
+        image(lanternRight, 900, 40);
+
+
+        // the animation of the stars
+        starChange = starChange + 1
+        if (starChange < 60) {
+            image(star1, 330, 82);
+        }
+        if (starChange === 60 || starChange > 60) {
+            image(star2, 300, 72)
+        }
+        if (starChange === 120) {
+            starChange = 0;
+        }
+
+
+        // Frame and parameters
+        image(frame, 0, 0, 1230, 694);
+
+        fill("#3f3f3f");
+        textFont('Bevan');
+        textSize(14);
+        text("Preparation towards the war", 45, 20, 140);
+
+        noStroke();
+        fill("white");
+        rect(195, 8, 330, 32, 10);
+
+        fill(231, 182, 85);
+        rect(195, 8, progressFill, 32, 10);
+
+        fill("#3f3f3f");
+        text("Day", 600, 30);
+
+        fill("black");
+        textFont("Roboto");
+        text(dayNow + "/5", 650, 30);
+
+        fill("#3f3f3f");
+        textFont('Bevan');
+        textSize(14);
+        text("Location", 730, 30);
+        fill("black");
+        textFont("Roboto");
+        text(scene, 820, 30);
+
+        image(silk, 1032, 13, 190, 666);
+        image(GCMonster, 1027, 5);
+        image(EMonster, 1027, 533);
+        image(string, 1112, stringY);
+        textFont("Roboto");
+        fill(201, 73, 67);
+        textSize(11);
+        text("Eunuch is too powerful", 1042, 515, 90, 50);
+        text("Grand Chancellor is too powerful", 1042, 160, 90, 50);
+
+
+
+    }
+    
+       if (first === true) {
+            dialogName.show();
+            dialogName.html("Empress Dowager");
+            dialogText.show();
+            dialogText.html(day1NightText[0]);
+
+            proceed = createButton('');
+            proceed.id('proceed');
+            proceed.parent("sketchHolder");
+            proceed.position(0, 50);
+
+            first = false;
+
+        }
+
+    if (count > 100 && count < 120) {
+        tint(255, locationA);
+        image(empressLocation, 330, 260);
+
+        locationA = locationA + 255 / 20;
+
+    }
+
+    if (count >= 120 && count < 220) {
+        image(empressLocation, 330, 260);
+    }
+
+    if (count >= 220 && count <= 275) {
+        tint(255, locationA);
+        image(empressLocation, 330, 260);
+
+        locationA = locationA - 255 / 55;
+    }
+
+    if (count < 102) {
+        transition();
+    }  
+    
+     if (count === 270) {
+        proceed.mouseClicked(updateTextDay1Night);
+    }
+    
+     if (count >= 270) {
+        tint(255, 255);
+        animation(arrow, 940, 585);
+        if (count === 300) {
+            arrow.visible = true;
+        }
+
+
+    }
+    
+}
+
 function day2() {
     
     courtSetup();
    
-    if (count === 300) {
+    if (count === 270) {
         proceed.mouseClicked(updateTextDay2);
     }
 
@@ -1251,30 +1411,30 @@ function studyMeet() {
         }
     }
 
-    if (count > 100 && count < 130) {
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(studyLocation, 380, 260);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(studyLocation, 380, 260);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(studyLocation, 380, 260);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
 
     if (count < 102) {
         transition();
     }
-    if (count === 300) {
+    if (count === 270) {
         if (meeting === "eunuch") {
             if (eunuchMeet === 0) {
                 proceed.mouseClicked(updateTextEunuchMeet0);
@@ -1301,10 +1461,10 @@ function studyMeet() {
 
     }
 
-    if (count >= 300) {
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 940, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1348,7 +1508,7 @@ function studyMeet() {
 function day3() {
     courtSetup();
     
-    if (count === 300) {
+    if (count === 270) {
         proceed.mouseClicked(updateTextDay3);
     }
 
@@ -1427,7 +1587,7 @@ function day3() {
 function day4() {
     courtSetup();
     
-    if (count === 300) {
+    if (count === 270) {
         proceed.mouseClicked(updateTextDay4);
     }
 
@@ -1506,7 +1666,7 @@ function day4() {
 function day5() {
     courtSetup();
     
-    if (count === 300) {
+    if (count === 270) {
         proceed.mouseClicked(updateTextDay5);
     }
 
@@ -1695,37 +1855,37 @@ function lastNight() {
 
         }
 
-    if (count > 100 && count < 130) {
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(empressLocation, 330, 260);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(empressLocation, 330, 260);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(empressLocation, 330, 260);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
 
     if (count < 102) {
         transition();
     }  
     
-     if (count === 300) {
+     if (count === 270) {
         proceed.mouseClicked(updateTextLastNight);
     }
     
-     if (count >= 300) {
+     if (count >= 270) {
         tint(255, 255);
         animation(arrow, 940, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1748,33 +1908,33 @@ function ending1() {
         transition();
     }
     
-     if (count > 100 && count < 130) {
+     if (count > 100 && count < 120) {
         tint(255, locationA);
         image(youWon, 463, 235);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(youWon, 463, 235);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(youWon, 463, 235);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
     
-     if (count === 300) {
+     if (count === 270) {
         proceed.mouseClicked(updateTextEnding1);
     }
     
-     if (count >= 300) {
+     if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1793,7 +1953,7 @@ function ending1() {
         sceneText.position(45, 610);
 
         proceed = createButton('');
-        proceed.id('proceed');
+        proceed.id('proceedBig');
         proceed.parent("sketchHolder");
         proceed.position(0, 50);
 
@@ -1817,33 +1977,33 @@ function ending2() {
         transition();
     }
     
-     if (count > 100 && count < 130) {
+     if (count > 100 && count < 120) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(gameOver, 463, 235);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
     
-     if (count === 300) {
+     if (count === 270) {
         proceed.mouseClicked(updateTextEnding2);
     }
     
-     if (count >= 300) {
+     if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1862,7 +2022,7 @@ function ending2() {
         sceneText.position(45, 610);
 
         proceed = createButton('');
-        proceed.id('proceed');
+        proceed.id('proceedBig');
         proceed.parent("sketchHolder");
         proceed.position(0, 50);
 
@@ -1886,33 +2046,33 @@ function ending3() {
         transition();
     }
     
-     if (count > 100 && count < 130) {
+     if (count > 100 && count < 120) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(gameOver, 463, 235);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
     
-     if (count === 300) {
+     if (count === 270) {
         proceed.mouseClicked(updateTextEnding3);
     }
     
-     if (count >= 300) {
+     if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1931,7 +2091,7 @@ function ending3() {
         sceneText.position(45, 610);
 
         proceed = createButton('');
-        proceed.id('proceed');
+        proceed.id('proceedBig');
         proceed.parent("sketchHolder");
         proceed.position(0, 50);
         i = -1;
@@ -1954,33 +2114,33 @@ function ending4() {
         transition();
     }
     
-     if (count > 100 && count < 130) {
+     if (count > 100 && count < 120) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         image(gameOver, 463, 235);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
     
-     if (count === 300) {
+     if (count === 270) {
         proceed.mouseClicked(updateTextEnding4);
     }
     
-     if (count >= 300) {
+     if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
-        if (count === 300) {
+        if (count === 270) {
             arrow.visible = true;
         }
 
@@ -1999,7 +2159,7 @@ function ending4() {
         sceneText.position(45, 610);
 
         proceed = createButton('');
-        proceed.id('proceed');
+        proceed.id('proceedBig');
         proceed.parent("sketchHolder");
         proceed.position(0, 50);
         i = -1;
@@ -2147,8 +2307,8 @@ function next() {
         planCount = 0;
     }
 
-
-    if (status === "day1" && scene === "Royal Study") {
+        
+        if (status === "day1Night") {
         status = "day2";
         nextBtn.hide();
         mask.hide();
@@ -2163,6 +2323,29 @@ function next() {
         ODMR = 0;
         proceed.remove();
         i = -1;
+        solutionY = 265;
+        solutionA = 0;
+        passY = 235;
+        passA = 0;
+        j = 0;
+        update = false;
+    }    
+
+    if (status === "day1" && scene === "Royal Study") {
+        status = "day1Night";
+        nextBtn.hide();
+        mask.hide();
+        count = 0;
+        first = true;
+        allWhite = false;
+        dialogText.hide();
+        dialogName.hide();
+        scene = "Empress Dowager's Room";
+        locationA = 0;
+        ODMA = 0;
+        ODMR = 0;
+        proceed.remove();
+        i = 0;
         solutionY = 265;
         solutionA = 0;
         passY = 235;
@@ -2302,11 +2485,11 @@ function day0() {
         first = false;
     }
 
-    if (count === 300) {
+    if (count === 270) {
         proceed.mouseClicked(updateTextIntro);
     }
 
-    if (count > 300) {
+    if (count > 270) {
         animation(arrow, 940, 585);
 
     }
@@ -2560,7 +2743,7 @@ function updateTextEunuchIntro() {
         proceed.style("cursor", "default");
         proceed.hide();
         nextBtn.show();
-        nextBtn.html("END THIS DAY");
+        nextBtn.html("End this meeting");
     } else {
         i = i + 1;
         dialogText.html(eunuchIntroText[i]);
@@ -2600,6 +2783,24 @@ function updateTextEunuchIntro() {
 
     }
 
+}
+
+function updateTextDay1Night() {
+    
+i = i + 1;
+dialogText.html(day1NightText[i]);
+    
+ if (i === 5) {
+            proceed.attribute('disabled', 'disabled');
+            proceed.style("cursor", "default");
+            proceed.hide();
+            mask.show()
+            nextBtn.show();
+            nextBtn.position(260, 260);
+            nextBtn.html("END THIS DAY");
+            arrow.visible = false;
+        }
+    
 }
 
 function updateTextDay2() {
@@ -4581,25 +4782,25 @@ function courtSetup() {
 
     imageMode(CORNER);
 
-    if (count > 100 && count < 130) {
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(courtLocation, 380, 260);
 
-        locationA = locationA + 255 / 30;
+        locationA = locationA + 255 / 20;
 
 
     }
 
-    if (count >= 130 && count < 245) {
+    if (count >= 120 && count < 220) {
         tint(255, 255);
         image(courtLocation, 380, 260);
     }
 
-    if (count >= 245 && count <= 320) {
+    if (count >= 220 && count <= 275) {
         tint(255, locationA);
         image(courtLocation, 380, 260);
 
-        locationA = locationA - 255 / 75;
+        locationA = locationA - 255 / 55;
     }
 
     if (count < 102) {
