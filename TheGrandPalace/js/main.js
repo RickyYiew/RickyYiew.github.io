@@ -81,7 +81,9 @@ var sunR = 176,
     passY = 235,
     passA = 0,
     ODMA = 0,
-    ODMR = 0;
+    ODMR = 0,
+    flip = false,
+    partyCount = 0;
 
 
 
@@ -105,7 +107,7 @@ var day1Text = ["Good morning, your majesty! I'm Grand Chancellor Li. It’s our
 ]
 var day1Name = ["Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Minister Chen", "Minister Chen", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand Chancellor Li"]
 var eunuchIntroText = ["I'm deeply sorry to see you look tired and pensive after court today. I know it’s tough to hold court and make people listen to you on the first day. As your closest and most loyal servant, I'd like to give you some suggestions if you would do me the honor.", "Grand Chancellor Li might seem helpful at this moment, but please be careful. He has plenty of allies in the court. He can easily manipulate and control what’s going on there.", "Your ancestors realized the importance of balancing the power of the Grand Chancellor, so they established a secret agency called Eastern Depot. It’s run by us, the eunuchs. ", "We can help the emperor to probe into those ministers’ life in case they are plotting anything evil. If it is your will, we can investigate the Grand Chancellor and his allies.", "In the meantime, I suggest you to find someone who can speak for you in the court.", "I think Minister Chen is a wise and personable figure. He also has the courage to stand against the Grand Chancellor. He’s an influential person and has the potential to build up a party to fight against the Grand Chancellor.", "Why don’t we give him some rewards and bring in some of his allies? I think there are openings in the court we can fill with his people. ", "I can always be of service if you should require it.", "Thanks for trusting me, your majesty.", "I will bring your message to Minister Chen. You should expect to see a change in power."]
-var day1NightText = ["Good evening, my dear son. How was your first day to hold court? I know it must have been a long day for you. Mother will continue to help and share you with my wisdom.", "You must have noticed there are two political forces in the court. But those people are snobbish and shift their ground quickly. If one party's solution has been approved and enforced, this party would have more allies converted from the opposite side. But nothing would happen if no agreement has been reached in the court.", "However, this change can be offset by your other actions after court. Think about how you can use this opportunity as an advantage to seek balance.", "You would do well to know that the party division in the court actually corresponds to your position on the magical silk painting. If you're closer to the eunuch, you will see more people wearing blue in the court. Conversely, you will see more people in red if you're closer to the Grand Chancellor.", "I hope these suggestions can clear out your confusion and help you overcome the difficulties. And don't forget to make sure we are on the right track towards war preparation. Good luck and may the ancestors protect you.",  "Please retreat, my son. I shall go to bed soon."]
+var day1NightText = ["Good evening, my dear son. How was your first day to hold court? I know it must have been a long day for you. Mother will continue to help and share you with my wisdom.", "You must have noticed there are two political forces in the court. But people in the court shift their ground quickly. They tend to switch to the side that has more power. If one party's solution has been approved and enforced, more people will convert to that party. But nothing would happen if no agreement has been reached in the court.", "However, this change can be offset by your other actions after court. Think about how you can use this opportunity as an advantage to seek balance.", "You would do well to know that the party division in the court actually corresponds to your position on the magical silk painting. If you're closer to the eunuch, you will see more people wearing blue in the court. Conversely, you will see more people in red if you're closer to the Grand Chancellor.", "I hope these suggestions can clear out your confusion and help you overcome the difficulties. And don't forget to make sure we are on the right track towards war preparation. Good luck and may the ancestors protect you.", "Please retreat, my son. I shall go to bed soon."]
 var day2Text = ["Good morning, your majesty! The economy in the south is booming. The government has perceived a noticeable gain in the tax income. Today, the court will discuss where the government should spend this money.", "Please allow me to present my opinion on this.", "The raise in tax income comes from the business industry in the south. So, I think we should do something to reward the businessmen's hard work.", "I would advise us to spend the money on building a canal in the south. The canal can improve the efficiency in transportation, which can be a boost in more future tax income.", "Your majesty, I'm unable to agree with Grand Chancellor's idea. I'll provide my insight for your reference.", "I think the imminent war is our urgency. We still lack weapons and armors to equip our newly recruited army.", "Though the southern economy is important, I still suggest us to put war preparation as our first priority and spend money on buying more equipment.", "Now, please make the decision, your majesty."]
 var day2Name = ["Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Grand Chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand Chancellor Li"]
 var day3Text = ["Greetings, your majesty. We have finished recruiting this year’s conscript labor. They are ready to serve our country. Today, the court needs to figure out which tasks should be assigned to them.", "Please allow me to present my opinion on this.", "I believe we should send our workers to construct the infrastructure in the South, especially the canal I have proposed yesterday.", "I know some people in the court might not be able to agree with me. But like what I have said before, this will definitely bring benefits to the economic development, which will bring a constant raise in the governmental revenue.", "Unfortunately, I have to stand up against Grand Chancellor's idea again.", "I think we still need a stronger defense system at the border. We need to prioritize the war preparation since we don't have much time left.", "I would suggest us to send the workers to build the defense at the border.", "Now, please make the decision, your majesty."]
@@ -116,9 +118,9 @@ var day5Text = ["Good morning, your majesty! I think we have been discussiong a 
 var day5Name = ["Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Grand chancellor Li", "Minister Chen", "Minister Chen", "Minister Chen", "Grand chancellor Li"]
 var GCMeet0Text = ["I’m suspicious some evil people have been plotting something dangerous in court. Minister Chen and his allies have been pulling us into a strange direction. I’m afraid we will be out of control soon.", "Meanwhile, you should know it’s not a good sign to let eunuch interfere the politics. I’m worried that you might be taken advantage by some notorious people. There are some ways I can help you if you’re interested.", "We need to have checks and balances with Minister Chen’s people. The Minister of Personnel has run an assessment on the officials in the court. We have found some Chen’s allies were not qualified for their positions.", "I would advise you to fire them to avoid any potential threats.", "What is your thought on this, your majesty?", "I really appreciate your trust in me, your majesty.", "I'll fire those unqualified officials as soon as possible. Don't worry about the vacant positions. I'll bring some brilliant people to fill in."]
 var GCMeet1Text = ["I have some news from the Ministry of Justice. Please allow me to present it if you're interested.", "They found some of Minister Chen’s allies might be involved in corruption. Rumor has it that they've been accepting bribes from the arms dealers. That’s why they don’t care about our people’s lives but care too much about the war!", "It aligns with the Confucian ideals and doctrines that the officals should always stay clean and be mindful of the people. I would advise you to arrest those dishonest people to make sure our morality won't be polluted.", "Please let me know what are your thoughts on this.", "I really appreciate your trust in me, your majesty.", "I'll do as you wish and arrest those who threatened our integrity. Don't worry about the vacant positions. I'll bring some brilliant people to fill in."]
-var GCMeet2Text = ["To make sure your majesty's safety, I have instructed the Ministry of Justice to continue their investigation of Minister Chen and his allies. And we're deeply concerned with the power behind Minister Chen.", "I think you've been aware that Eunuch Wang colluded with several officials across the palace and brought a strong influence to the politics. To be honest, we don't believe he has a good intention of doing so. Especially, our sources have shown he might be plotting something evil." , "Although we're not sure what that is, once he uses all of his power to attack us, it will bring a huge disaster to the royal family and our nation. It will do all of us good if your majesty start to interrogate Eunuch Wang and Minister Chen.", "Please let me know about your plan, your majesty.", "I really appreciate your trust in me, your majesty.", "I know this is about the destiny of our dynasty. So, I'll ask the Ministry of Justice to look into this issue without delay. We shall put an end to these political machinations."]
+var GCMeet2Text = ["To make sure your majesty's safety, I have instructed the Ministry of Justice to continue their investigation of Minister Chen and his allies. And we're deeply concerned with the power behind Minister Chen.", "I think you've been aware that Eunuch Wang colluded with several officials across the palace and brought a strong influence to the politics. To be honest, we don't believe he has a good intention of doing so. Especially, our sources have shown he might be plotting something evil.", "Although we're not sure what that is, once he uses all of his power to attack us, it will bring a huge disaster to the royal family and our nation. It will do all of us good if your majesty start to interrogate Eunuch Wang and Minister Chen.", "Please let me know about your plan, your majesty.", "I really appreciate your trust in me, your majesty.", "I know this is about the destiny of our dynasty. So, I'll ask the Ministry of Justice to look into this issue without delay. We shall put an end to these political machinations."]
 var EMeet0Text = ["Thanks for your boundless generosity to see me again. Have you reconsidered about the suggestion I told you last time?", "If we could fill the court openings with Minister Chen's people, he could ask his allies to speak for us. At that time, I don't think you should worry too much that Grand Chancellor Li might override your power.", "How does this sound, your majesty?", "Thanks for trusting me, your majesty.", "I will bring your message to Minister Chen. You should expect to see some differences in court tomorrow."]
-var EMeet1Text = ["As you wish, the Eastern Depot has been spying on Grand Chancellor's allies. And we have found something pretty suspicious.", "Based on our reliable sources, Grand Chancellor Li and his allies have a strong connection with the businessmen in the South. That could be the reason why they persuade you to make policies that benefit the southern economy.", "What's worse, we have found evidence that some of Li's allies have accepted bribes from the southern businessmen. I would advise your majesty to punish them severely and dispel them out of court.", "Please inform me of your plan, your majesty?", "Thanks for trusting me, your majesty.", "I will immediately instruct the Eastern Depot to bring the justice to your court. Should you're concerned with the vacant positions caused by this anti-corruption action, I'll bring in some clean and upright people to fill in."]
+var EMeet1Text = ["As you wish, the Eastern Depot has been spying on Grand Chancellor's allies. And we have found something pretty suspicious.", "Based on our reliable sources, Grand Chancellor Li and his allies have a strong connection with the businessmen in the South. That could be the reason why they persuade you to make policies that benefit the southern economy.", "What's worse, we have found evidence that some of Li's allies have accepted bribes from the southern businessmen. I would advise your majesty to punish them severely and dispel them out of court.", "Please inform me of your plan, your majesty.", "Thanks for trusting me, your majesty.", "I will immediately instruct the Eastern Depot to bring the justice to your court. Should you're concerned with the vacant positions caused by this anti-corruption action, I'll bring in some clean and upright people to fill in."]
 var EMeet2Text = ["The Eastern Depot continued to investigate the corruption associated with Grand Chancellor Li and his allies. And unfortunately, we found something even more notorious. I don't know if it is appropriate to say.", "Please don't be mad after you hear this, your majesty. We've found a letter saying someone is plotting a rebellion against you! Upon our speculation, we think the mastermind behind all of this is probably Grand Chancellor Li.", "You have rejected some of his proposals. He can't do whatever he wants. He might start to think you're one of his threats! I hope nothing bad will happen at this point. But I would advise you to take action before it's too late.", "Does this sound fair, your majesty?", "Thanks for trusting me, your majesty.", "I will immediately instruct the Eastern Depot to arrest Grand Chancellor Li and get the whole account of the conspiracy. We shall put an end to this traitor of our dynasty."]
 var lastNightText = ["My dear son, how have you been as a new ruler of our country? I believe you have demonstrated a strong ability to maintain your power and uphold the justice. You managed to prevent any influencers in the court from exceeding your power. You should be proud of what you have achieved.", "But what truly concerns me is still the war. I had a bad dream last night. I dreamed about your father warning me of the horrible future. I saw lots of fire and terror. My son, I have a feeling that the war will break out pretty soon.", "Is our country well-prepared for fighting against the invasion? Everytime when I think about this question, I would suffer from a severe headache. But I know you're the leader of our country. I believe you have tried all you can to get us prepared.", "We shall see what the future holds for our dynasty. May the odds be with you.", "Please retreat, my son. I shall go to bed soon."]
 var ending1Text = ["However, with the solid preparation and constant revenue to support the war, your excellent troops immediately react and vehemently fight back. They make it almost impossible for the intruders to move any farther into your land. Eventually, they have to flee away and pay for the damage they have done.", "After the war, you gain much prestige because of the far-sighted decisions you made for the war preparation. People kneel down before you to praise your wisdom and leadership. They start to believe you can always choose the right decision for this country.", 'From that day on, nobody would ever oppose to what you say. You successfully identify a few disloyal people in court and sweep them out of the palace. You have solidified your power and maintained the position in throne. You proved to the world that you are the most powerful one above all under heaven.', "With the efficiency gained from your unified power, you continue to make contributions for the people in this country and lead your dynasty to a golden era. You have been worshipped by your descendants and memorized as one of the greatest emperors of all time."]
@@ -202,7 +204,7 @@ function draw() {
     if (status === "home") {
         home();
     }
-    
+
     if (status === "bgStory") {
         bgStory();
     }
@@ -222,7 +224,7 @@ function draw() {
         }
 
     }
-    
+
     if (status === "day1Night") {
         day1Night();
     }
@@ -237,8 +239,8 @@ function draw() {
         }
 
     }
-    
-     if (status === "day3") {
+
+    if (status === "day3") {
         if (scene === "Morning Court") {
             day3();
         }
@@ -248,8 +250,8 @@ function draw() {
         }
 
     }
-    
-      if (status === "day4") {
+
+    if (status === "day4") {
         if (scene === "Morning Court") {
             day4();
         }
@@ -259,8 +261,8 @@ function draw() {
         }
 
     }
-    
-      if (status === "day5") {
+
+    if (status === "day5") {
         if (scene === "Morning Court") {
             day5();
         }
@@ -270,23 +272,23 @@ function draw() {
         }
 
     }
-    
+
     if (status === "lastNight") {
         lastNight();
     }
-    
+
     if (status === "ending1") {
         ending1();
     }
-    
+
     if (status === "ending2") {
         ending2();
     }
-    
+
     if (status === "ending3") {
         ending3();
     }
-    
+
     if (status === "ending4") {
         ending4();
     }
@@ -338,40 +340,40 @@ function home() {
 }
 
 function bgStory() {
-     count = count + 1
+    count = count + 1
 
 
     if (count > 30) {
-       
+
         if (bgOrder === 1) {
-        image(storyBG1, -2, -50, 1234, 626);
-        } 
-            
-        if (bgOrder === 2) {
-        image(storyBG2, -2, -20, 1234, 648);
-        }  
-      
-        if (bgOrder === 3) {
-        image(storyBG3, -2, 0, 1234, 547);
+            image(storyBG1, -2, -50, 1234, 626);
         }
-            
-        
-        
+
+        if (bgOrder === 2) {
+            image(storyBG2, -2, -20, 1234, 648);
+        }
+
+        if (bgOrder === 3) {
+            image(storyBG3, -2, 0, 1234, 547);
+        }
+
+
+
         transitionBG();
         image(btmPanel, 0, 537, 1230);
     }
-    
-     if (count < 102) {
+
+    if (count < 102) {
         transition();
     }
-    
- 
-    
-     if (count === 160) {
+
+
+
+    if (count === 160) {
         proceed.mouseClicked(updateTextBgStory);
     }
-    
-     if (count >= 160) {
+
+    if (count >= 160) {
         tint(255, 255);
         animation(arrow, 1140, 585);
         if (count === 160) {
@@ -379,16 +381,16 @@ function bgStory() {
         }
 
     }
-    
+
     if (count === 140) {
         skip = createImg("image/skip.png");
         skip.id("skip");
         skip.parent("sketchHolder");
-        skip.position(1090, 15);
-        skip.mouseClicked(skipIntro);
+        skip.position(1095, 15);
+        skip.mouseClicked(skipBtn);
     }
-    
-     if (first === true) {
+
+    if (first === true) {
         sceneName = createDiv("Background Story: Where It Begins");
         sceneName.id("bgName");
         sceneName.parent("sketchHolder");
@@ -403,10 +405,10 @@ function bgStory() {
         proceed.id('proceedBig');
         proceed.parent("sketchHolder");
         proceed.position(0, 50);
-        
+
 
         first = false;
-        }  
+    }
 }
 
 function intro() {
@@ -766,15 +768,15 @@ function day1() {
 
 
         if (first === true) {
-        dialogName = createDiv("Everybody");
-        dialogName.id("dialogName");
-        dialogName.parent("sketchHolder");
-        dialogName.position(45, 570);
+            dialogName = createDiv("Everybody");
+            dialogName.id("dialogName");
+            dialogName.parent("sketchHolder");
+            dialogName.position(45, 570);
 
-        dialogText = createDiv("Long live the emperor!");
-        dialogText.id("dialogText");
-        dialogText.parent("sketchHolder");
-        dialogText.position(45, 610);
+            dialogText = createDiv("Long live the emperor!");
+            dialogText.id("dialogText");
+            dialogText.parent("sketchHolder");
+            dialogText.position(45, 610);
 
             proceed = createButton('');
             proceed.id('proceed');
@@ -842,6 +844,11 @@ function day1() {
     }
     if (count === 270) {
         proceed.mouseClicked(updateTextDay1);
+        skip = createImg("image/skip.png");
+        skip.id("skip");
+        skip.parent("sketchHolder");
+        skip.position(905, 65);
+        skip.mouseClicked(skipBtn);
     }
 
     if (i >= 0 && i <= 3) {
@@ -1030,6 +1037,11 @@ function eunuchIntro() {
     }
     if (count === 270) {
         proceed.mouseClicked(updateTextEunuchIntro);
+        skip = createImg("image/skip.png");
+        skip.id("skip");
+        skip.parent("sketchHolder");
+        skip.position(905, 65);
+        skip.mouseClicked(skipBtn);
     }
 
     if (count >= 270) {
@@ -1070,15 +1082,15 @@ function eunuchIntro() {
 }
 
 function day1Night() {
-  count = count + 1;
- 
+    count = count + 1;
+
     if (count > 30) {
         image(empressRoom, 0, 22, 1030, 522);
         // Change the images of the Empress Dowager
         if (i % 2 == 0) {
-            image(empress2, 448, 137);
-        } else {
             image(empress1, 448, 137);
+        } else {
+            image(empress2, 448, 137);
         }
         // the animation of the lantern lights
         ellipseMode(RADIUS);
@@ -1170,21 +1182,21 @@ function day1Night() {
 
 
     }
-    
-       if (first === true) {
-            dialogName.show();
-            dialogName.html("Empress Dowager");
-            dialogText.show();
-            dialogText.html(day1NightText[0]);
 
-            proceed = createButton('');
-            proceed.id('proceed');
-            proceed.parent("sketchHolder");
-            proceed.position(0, 50);
+    if (first === true) {
+        dialogName.show();
+        dialogName.html("Empress Dowager");
+        dialogText.show();
+        dialogText.html(day1NightText[0]);
 
-            first = false;
+        proceed = createButton('');
+        proceed.id('proceed');
+        proceed.parent("sketchHolder");
+        proceed.position(0, 50);
 
-        }
+        first = false;
+
+    }
 
     if (count > 100 && count < 120) {
         tint(255, locationA);
@@ -1207,13 +1219,18 @@ function day1Night() {
 
     if (count < 102) {
         transition();
-    }  
-    
-     if (count === 270) {
-        proceed.mouseClicked(updateTextDay1Night);
     }
-    
-     if (count >= 270) {
+
+    if (count === 270) {
+        proceed.mouseClicked(updateTextDay1Night);
+        skip = createImg("image/skip.png");
+        skip.id("skip");
+        skip.parent("sketchHolder");
+        skip.position(905, 65);
+        skip.mouseClicked(skipBtn);
+    }
+
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 940, 585);
         if (count === 300) {
@@ -1222,18 +1239,18 @@ function day1Night() {
 
 
     }
-    
+
 }
 
 function day2() {
-    
+
     courtSetup();
-   
+
     if (count === 270) {
         proceed.mouseClicked(updateTextDay2);
     }
 
-    
+
     if (i >= 0 && i <= 3) {
         GCIn();
         if (i === 2 || i === 3) {
@@ -1299,7 +1316,7 @@ function day2() {
     if (i >= 16) {
         GCOut();
     }
-    
+
     if (afterCourtPlan === true) {
         showPlan();
     }
@@ -1458,6 +1475,12 @@ function studyMeet() {
                 proceed.mouseClicked(updateTextGCMeet2);
             }
         }
+        
+        skip = createImg("image/skip.png");
+        skip.id("skip");
+        skip.parent("sketchHolder");
+        skip.position(905, 65);
+        skip.mouseClicked(skipBtn);
 
     }
 
@@ -1469,50 +1492,50 @@ function studyMeet() {
         }
 
     }
-    
+
     if (update === true) {
-    
-         if (meeting === "eunuch") {
-         if (eunuchMeet === 1) {
-            if (i === 3) {
-                updateMeter();
+
+        if (meeting === "eunuch") {
+            if (eunuchMeet === 1) {
+                if (i === 3) {
+                    updateMeter();
+                }
+            }
+            if (eunuchMeet === 2 || eunuchMeet === 3) {
+                if (i === 4) {
+                    updateMeter();
+                }
             }
         }
-         if (eunuchMeet === 2 || eunuchMeet === 3) {
-            if (i === 4) {
-                updateMeter();
+
+        if (meeting === "Grand Chancellor") {
+            if (GCMeet === 1) {
+                if (i === 5) {
+                    updateMeter();
+                }
+            }
+
+            if (GCMeet === 2 || GCMeet === 3) {
+                if (i === 4) {
+                    updateMeter();
+                }
             }
         }
+
     }
 
-    if (meeting === "Grand Chancellor") {
-        if (GCMeet === 1) {
-            if (i === 5) {
-                updateMeter();
-            }
-        }
-        
-         if (GCMeet === 2 || GCMeet === 3) {
-            if (i === 4) {
-                updateMeter();
-            }
-        }
-    }
-        
-    }
 
-   
 
 }
 
 function day3() {
     courtSetup();
-    
+
     if (count === 270) {
         proceed.mouseClicked(updateTextDay3);
     }
 
-     if (i >= 0 && i <= 3) {
+    if (i >= 0 && i <= 3) {
         GCIn();
         if (i === 2 || i === 3) {
             tint(255, solutionA);
@@ -1577,21 +1600,21 @@ function day3() {
     if (i >= 15) {
         GCOut();
     }
- 
-     if (afterCourtPlan === true) {
+
+    if (afterCourtPlan === true) {
         showPlan();
     }
-    
+
 }
 
 function day4() {
     courtSetup();
-    
+
     if (count === 270) {
         proceed.mouseClicked(updateTextDay4);
     }
 
-     if (i >= 0 && i <= 3) {
+    if (i >= 0 && i <= 3) {
         GCIn();
         if (i === 2 || i === 3) {
             tint(255, solutionA);
@@ -1656,21 +1679,21 @@ function day4() {
     if (i >= 15) {
         GCOut();
     }
-    
-     if (afterCourtPlan === true) {
+
+    if (afterCourtPlan === true) {
         showPlan();
     }
- 
+
 }
 
 function day5() {
     courtSetup();
-    
+
     if (count === 270) {
         proceed.mouseClicked(updateTextDay5);
     }
 
-     if (i >= 0 && i <= 3) {
+    if (i >= 0 && i <= 3) {
         GCIn();
         if (i === 2 || i === 3) {
             tint(255, solutionA);
@@ -1735,12 +1758,12 @@ function day5() {
     if (i >= 15) {
         GCOut();
     }
- 
+
 }
 
 function lastNight() {
-  count = count + 1;
- 
+    count = count + 1;
+
     if (count > 30) {
         image(empressRoom, 0, 22, 1030, 522);
         // Change the images of the Empress Dowager
@@ -1839,21 +1862,21 @@ function lastNight() {
 
 
     }
-    
-       if (first === true) {
-            dialogName.show();
-            dialogName.html("Empress Dowager");
-            dialogText.show();
-            dialogText.html(lastNightText[0]);
 
-            proceed = createButton('');
-            proceed.id('proceed');
-            proceed.parent("sketchHolder");
-            proceed.position(0, 50);
+    if (first === true) {
+        dialogName.show();
+        dialogName.html("Empress Dowager");
+        dialogText.show();
+        dialogText.html(lastNightText[0]);
 
-            first = false;
+        proceed = createButton('');
+        proceed.id('proceed');
+        proceed.parent("sketchHolder");
+        proceed.position(0, 50);
 
-        }
+        first = false;
+
+    }
 
     if (count > 100 && count < 120) {
         tint(255, locationA);
@@ -1876,13 +1899,13 @@ function lastNight() {
 
     if (count < 102) {
         transition();
-    }  
-    
-     if (count === 270) {
+    }
+
+    if (count === 270) {
         proceed.mouseClicked(updateTextLastNight);
     }
-    
-     if (count >= 270) {
+
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 940, 585);
         if (count === 270) {
@@ -1891,11 +1914,11 @@ function lastNight() {
 
 
     }
-    
+
 }
 
 function ending1() {
-     count = count + 1
+    count = count + 1
 
 
     if (count > 30) {
@@ -1903,12 +1926,12 @@ function ending1() {
 
         image(btmPanel, 0, 537, 1230);
     }
-    
-     if (count < 102) {
+
+    if (count < 102) {
         transition();
     }
-    
-     if (count > 100 && count < 120) {
+
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(youWon, 463, 235);
 
@@ -1926,12 +1949,12 @@ function ending1() {
 
         locationA = locationA - 255 / 55;
     }
-    
-     if (count === 270) {
+
+    if (count === 270) {
         proceed.mouseClicked(updateTextEnding1);
     }
-    
-     if (count >= 270) {
+
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
         if (count === 270) {
@@ -1940,8 +1963,8 @@ function ending1() {
 
 
     }
-    
-     if (first === true) {
+
+    if (first === true) {
         sceneName = createDiv("Ending: Above All under Heaven");
         sceneName.id("sceneName");
         sceneName.parent("sketchHolder");
@@ -1958,13 +1981,13 @@ function ending1() {
         proceed.position(0, 50);
 
         first = false;
-        }
-    
-    
+    }
+
+
 }
 
 function ending2() {
-     count = count + 1
+    count = count + 1
 
 
     if (count > 30) {
@@ -1972,12 +1995,12 @@ function ending2() {
 
         image(btmPanel, 0, 537, 1230);
     }
-    
-     if (count < 102) {
+
+    if (count < 102) {
         transition();
     }
-    
-     if (count > 100 && count < 120) {
+
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
@@ -1995,12 +2018,12 @@ function ending2() {
 
         locationA = locationA - 255 / 55;
     }
-    
-     if (count === 270) {
+
+    if (count === 270) {
         proceed.mouseClicked(updateTextEnding2);
     }
-    
-     if (count >= 270) {
+
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
         if (count === 270) {
@@ -2009,8 +2032,8 @@ function ending2() {
 
 
     }
-    
-     if (first === true) {
+
+    if (first === true) {
         sceneName = createDiv("Ending: Collapsed in Fire");
         sceneName.id("sceneName");
         sceneName.parent("sketchHolder");
@@ -2027,13 +2050,13 @@ function ending2() {
         proceed.position(0, 50);
 
         first = false;
-        }
-    
-    
+    }
+
+
 }
 
 function ending3() {
-     count = count + 1
+    count = count + 1
 
 
     if (count > 30) {
@@ -2041,12 +2064,12 @@ function ending3() {
 
         image(btmPanel, 0, 537, 1230);
     }
-    
-     if (count < 102) {
+
+    if (count < 102) {
         transition();
     }
-    
-     if (count > 100 && count < 120) {
+
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
@@ -2064,12 +2087,12 @@ function ending3() {
 
         locationA = locationA - 255 / 55;
     }
-    
-     if (count === 270) {
+
+    if (count === 270) {
         proceed.mouseClicked(updateTextEnding3);
     }
-    
-     if (count >= 270) {
+
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
         if (count === 270) {
@@ -2078,8 +2101,8 @@ function ending3() {
 
 
     }
-    
-     if (first === true) {
+
+    if (first === true) {
         sceneName = createDiv("Ending: Locked up by Grand Chancellor");
         sceneName.id("sceneName");
         sceneName.parent("sketchHolder");
@@ -2097,11 +2120,11 @@ function ending3() {
         i = -1;
 
         first = false;
-        }    
+    }
 }
 
 function ending4() {
-     count = count + 1
+    count = count + 1
 
 
     if (count > 30) {
@@ -2109,12 +2132,12 @@ function ending4() {
 
         image(btmPanel, 0, 537, 1230);
     }
-    
-     if (count < 102) {
+
+    if (count < 102) {
         transition();
     }
-    
-     if (count > 100 && count < 120) {
+
+    if (count > 100 && count < 120) {
         tint(255, locationA);
         image(gameOver, 463, 235);
 
@@ -2132,12 +2155,12 @@ function ending4() {
 
         locationA = locationA - 255 / 55;
     }
-    
-     if (count === 270) {
+
+    if (count === 270) {
         proceed.mouseClicked(updateTextEnding4);
     }
-    
-     if (count >= 270) {
+
+    if (count >= 270) {
         tint(255, 255);
         animation(arrow, 1140, 585);
         if (count === 270) {
@@ -2146,8 +2169,8 @@ function ending4() {
 
 
     }
-    
-     if (first === true) {
+
+    if (first === true) {
         sceneName = createDiv("Ending: Murdered by Eunuch");
         sceneName.id("sceneName");
         sceneName.parent("sketchHolder");
@@ -2165,194 +2188,202 @@ function ending4() {
         i = -1;
 
         first = false;
-        }    
+    }
 }
 
 function BtnOver1() {
-    startBtn.style("opacity", "0.5");    
-    
-    
+    startBtn.style("opacity", "0.5");
+
+
     document.body.style.cursor = "pointer";
 }
 
 function BtnOut1() {
 
-    startBtn.style("opacity", "1");    
-  
+    startBtn.style("opacity", "1");
+
     document.body.style.cursor = "default";
 }
 
 function next() {
     if (power > 0 && power < 100) {
-        
-   
-        
+
+
+
         if (status === "lastNight") {
-        nextBtn.remove();
-        mask.remove();
-        count = 0;
-        first = true;
-        allWhite = false;
-        dialogText.remove();
-        dialogName.remove();
-        proceed.remove();
-        i = -1;
-        locationA = 0;
-            
-        if (progress === 330) {
-        status = "ending1";
-        } else {
-        status = "ending2";
+            nextBtn.remove();
+            mask.remove();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.remove();
+            dialogName.remove();
+            proceed.remove();
+            i = -1;
+            locationA = 0;
+
+            if (progress === 330) {
+                status = "ending1";
+            } else {
+                status = "ending2";
+            }
+
         }
-            
-        }
-    
+
         if (status === "day5") {
-        update = false;
-        status = "lastNight";
-        nextBtn.hide();
-        mask.hide();
-        count = 0;
-        first = true;
-        allWhite = false;
-        dialogText.hide();
-        dialogName.hide();
-        scene = "Empress Dowager's Room";
-        locationA = 0;
-        ODMA = 0;
-        ODMR = 0;
-        proceed.remove();
-        i = 0;
-        solutionY = 265;
-        solutionA = 0;
-        passY = 235;
-        passA = 0;
-        j = 0;
-    }
-    
+            update = false;
+            status = "lastNight";
+            nextBtn.hide();
+            mask.hide();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.hide();
+            dialogName.hide();
+            scene = "Empress Dowager's Room";
+            locationA = 0;
+            ODMA = 0;
+            ODMR = 0;
+            proceed.remove();
+            i = 0;
+            solutionY = 265;
+            solutionA = 0;
+            passY = 235;
+            passA = 0;
+            j = 0;
+        }
+
         if (status === "day4") {
-        meetGCBtn.remove();
-        meetEBtn.remove();
-        update = false;
-        status = "day5";
-        nextBtn.hide();
-        mask.hide();
-        count = 0;
-        first = true;
-        allWhite = false;
-        dialogText.hide();
-        dialogName.hide();
-        scene = "Morning Court";
-        locationA = 0;
-        ODMA = 0;
-        ODMR = 0;
-        proceed.remove();
-        i = -1;
-        solutionY = 265;
-        solutionA = 0;
-        passY = 235;
-        passA = 0;
-        j = 0;
-    }
-    
-    if (status === "day3") {
-        meetGCBtn.remove();
-        meetEBtn.remove();
-        update = false;
-        status = "day4";
-        nextBtn.hide();
-        mask.hide();
-        count = 0;
-        first = true;
-        allWhite = false;
-        dialogText.hide();
-        dialogName.hide();
-        scene = "Morning Court";
-        locationA = 0;
-        ODMA = 0;
-        ODMR = 0;
-        proceed.remove();
-        i = -1;
-        solutionY = 265;
-        solutionA = 0;
-        passY = 235;
-        passA = 0;
-        j = 0;
-        planCount = 0;
-    }
-    
-    if (status === "day2") {
-        meetGCBtn.remove();
-        meetEBtn.remove();
-        update = false;
-        status = "day3";
-        nextBtn.hide();
-        mask.hide();
-        count = 0;
-        first = true;
-        allWhite = false;
-        dialogText.hide();
-        dialogName.hide();
-        scene = "Morning Court";
-        locationA = 0;
-        ODMA = 0;
-        ODMR = 0;
-        proceed.remove();
-        i = -1;
-        solutionY = 265;
-        solutionA = 0;
-        passY = 235;
-        passA = 0;
-        j = 0;
-        planCount = 0;
-    }
+            meetGCBtn.remove();
+            meetEBtn.remove();
+            update = false;
+            status = "day5";
+            nextBtn.hide();
+            mask.hide();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.hide();
+            dialogName.hide();
+            scene = "Morning Court";
+            locationA = 0;
+            ODMA = 0;
+            ODMR = 0;
+            proceed.remove();
+            i = -1;
+            solutionY = 265;
+            solutionA = 0;
+            passY = 235;
+            passA = 0;
+            j = 0;
+            flip = false;
+            partyCount = 0;
+        }
 
-        
+        if (status === "day3") {
+            meetGCBtn.remove();
+            meetEBtn.remove();
+            update = false;
+            status = "day4";
+            nextBtn.hide();
+            mask.hide();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.hide();
+            dialogName.hide();
+            scene = "Morning Court";
+            locationA = 0;
+            ODMA = 0;
+            ODMR = 0;
+            proceed.remove();
+            i = -1;
+            solutionY = 265;
+            solutionA = 0;
+            passY = 235;
+            passA = 0;
+            j = 0;
+            planCount = 0;
+            flip = false;
+            partyCount = 0;
+        }
+
+        if (status === "day2") {
+            meetGCBtn.remove();
+            meetEBtn.remove();
+            update = false;
+            status = "day3";
+            nextBtn.hide();
+            mask.hide();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.hide();
+            dialogName.hide();
+            scene = "Morning Court";
+            locationA = 0;
+            ODMA = 0;
+            ODMR = 0;
+            proceed.remove();
+            i = -1;
+            solutionY = 265;
+            solutionA = 0;
+            passY = 235;
+            passA = 0;
+            j = 0;
+            planCount = 0;
+            flip = false;
+            partyCount = 0;
+        }
+
+
         if (status === "day1Night") {
-        status = "day2";
-        nextBtn.hide();
-        mask.hide();
-        count = 0;
-        first = true;
-        allWhite = false;
-        dialogText.hide();
-        dialogName.hide();
-        scene = "Morning Court";
-        locationA = 0;
-        ODMA = 0;
-        ODMR = 0;
-        proceed.remove();
-        i = -1;
-        solutionY = 265;
-        solutionA = 0;
-        passY = 235;
-        passA = 0;
-        j = 0;
-        update = false;
-    }    
+            status = "day2";
+            nextBtn.hide();
+            mask.hide();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.hide();
+            dialogName.hide();
+            scene = "Morning Court";
+            locationA = 0;
+            ODMA = 0;
+            ODMR = 0;
+            proceed.remove();
+            i = -1;
+            solutionY = 265;
+            solutionA = 0;
+            passY = 235;
+            passA = 0;
+            j = 0;
+            update = false;
+            flip = false;
+            partyCount = 0;
+        }
 
-    if (status === "day1" && scene === "Royal Study") {
-        status = "day1Night";
-        nextBtn.hide();
-        mask.hide();
-        count = 0;
-        first = true;
-        allWhite = false;
-        dialogText.hide();
-        dialogName.hide();
-        scene = "Empress Dowager's Room";
-        locationA = 0;
-        ODMA = 0;
-        ODMR = 0;
-        proceed.remove();
-        i = 0;
-        solutionY = 265;
-        solutionA = 0;
-        passY = 235;
-        passA = 0;
-        j = 0;
-        update = false;
-    }
+        if (status === "day1" && scene === "Royal Study") {
+            status = "day1Night";
+            nextBtn.hide();
+            mask.hide();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.hide();
+            dialogName.hide();
+            scene = "Empress Dowager's Room";
+            locationA = 0;
+            ODMA = 0;
+            ODMR = 0;
+            proceed.remove();
+            i = 0;
+            solutionY = 265;
+            solutionA = 0;
+            passY = 235;
+            passA = 0;
+            j = 0;
+            update = false;
+        }
 
         if (status === "day1" && scene === "Morning Court") {
             nextBtn.hide();
@@ -2371,53 +2402,53 @@ function next() {
 
 
 
-    if (status === "intro") {
-        status = "day1";
-        nextBtn.remove();
-        mask.remove();
+        if (status === "intro") {
+            status = "day1";
+            nextBtn.remove();
+            mask.remove();
+            count = 0;
+            first = true;
+            allWhite = false;
+            dialogText.remove();
+            dialogName.remove();
+            scene = "Morning Court";
+            locationA = 0;
+            proceed.remove();
+            i = -1;
+            stringY = -227.5;
+            progress = 0;
+        }
+
+        if (status === "home") {
+            status = "bgStory";
+            startBtn.remove();
+            document.body.style.cursor = "default";
+            count = 0;
+            swell = true;
+            first = true;
+        }
+
+    } else {
+
         count = 0;
         first = true;
         allWhite = false;
         dialogText.remove();
         dialogName.remove();
-        scene = "Morning Court";
-        locationA = 0;
         proceed.remove();
-        i = -1;
-        stringY = -227.5;
-        progress = 0;
-    }
+        mask.remove();
+        nextBtn.remove();
+        locationA = 0;
 
-    if (status === "home") {
-        status = "bgStory";
-        startBtn.remove();
-        document.body.style.cursor = "default";
-        count = 0;
-        swell = true;
-        first = true;
-    }
+        if (power <= 0) {
+            status = "ending4";
+        }
 
- } else {
-     
-    count = 0;
-    first = true;
-    allWhite = false;
-    dialogText.remove();
-    dialogName.remove();
-    proceed.remove();
-    mask.remove();
-    nextBtn.remove();
-    locationA = 0;
-     
-     if (power <= 0) {
-    status = "ending4";
+        if (power >= 100) {
+            status = "ending3";
+        }
+
     }
-     
-    if (power >= 100) {
-    status = "ending3";
-    }
-     
- }
 
 }
 
@@ -2440,27 +2471,27 @@ function transition() {
 
 function transitionBG() {
     if (bgChangeRect === true) {
-        
-    bgRectCount = bgRectCount + 1; 
-    fill(255, bgRectA);
-    rect(0, 0, 1230, 544);
-    if (bgRectCount < 24) {
-    bgRectA = bgRectA + 255/24
-    } 
-    if (bgRectCount === 24) {
-    bgRectA = 255
-    bgOrder = bgOrder + 1;
+
+        bgRectCount = bgRectCount + 1;
+        fill(255, bgRectA);
+        rect(0, 0, 1230, 544);
+        if (bgRectCount < 24) {
+            bgRectA = bgRectA + 255 / 24
+        }
+        if (bgRectCount === 24) {
+            bgRectA = 255
+            bgOrder = bgOrder + 1;
+        }
+        if (bgRectCount > 24 && bgRectCount < 48) {
+            bgRectA = bgRectA - 255 / 24
+        }
+        if (bgRectCount === 48) {
+            bgRectA = 0;
+            bgRectCount = 0;
+            bgChangeRect = false;
+        }
     }
-    if (bgRectCount > 24 && bgRectCount < 48) {
-     bgRectA = bgRectA - 255/24    
-    }
-    if (bgRectCount === 48) {
-    bgRectA = 0;
-    bgRectCount = 0;
-    bgChangeRect = false;
-    }
-    }
-    
+
 }
 
 function day0() {
@@ -2497,30 +2528,30 @@ function day0() {
 }
 
 function updateTextBgStory() {
-i = i + 1;
-sceneText.html(bgStoryText[i]);
-    
-if (i === 4) {
-bgChangeRect = true;
-}
-    
-if (i === 7) {
-bgChangeRect = true;
-}
+    i = i + 1;
+    sceneText.html(bgStoryText[i]);
 
-if (i === 10) {
-    
-status = "intro";
-count = 0; 
-first = true;
-allWhite = false;
-i = 0;
-skip.remove();
-sceneName.remove();
-sceneText.remove();
-proceed.remove();
+    if (i === 4) {
+        bgChangeRect = true;
     }
-        
+
+    if (i === 7) {
+        bgChangeRect = true;
+    }
+
+    if (i === 10) {
+
+        status = "intro";
+        count = 0;
+        first = true;
+        allWhite = false;
+        i = 0;
+        skip.remove();
+        sceneName.remove();
+        sceneText.remove();
+        proceed.remove();
+    }
+
 }
 
 function updateTextIntro() {
@@ -2674,6 +2705,7 @@ function updateTextDay1() {
     }
 
     if (i === 13) {
+        skip.remove();
         opNow = false;
         removeOp();
         mask = createDiv("");
@@ -2684,18 +2716,18 @@ function updateTextDay1() {
         proceed.attribute('disabled', 'disabled');
         proceed.style("cursor", "default");
         proceed.hide();
-        
+
         choiceBtn1 = createDiv("Cut your own recreational expenses");
         choiceBtn1.class('choice');
         choiceBtn1.parent("sketchHolder");
         choiceBtn1.mouseClicked(Btn1);
 
-            choiceBtn2 = createDiv("Impose more taxes on the businessmen in the south");
-            choiceBtn2.class('choice');
-            choiceBtn2.parent("sketchHolder");
-            choiceBtn2.mouseClicked(Btn2);
-        
-       
+        choiceBtn2 = createDiv("Impose more taxes on the businessmen in the south");
+        choiceBtn2.class('choice');
+        choiceBtn2.parent("sketchHolder");
+        choiceBtn2.mouseClicked(Btn2);
+
+
         choiceBtn1.position(280, 200);
         choiceBtn2.position(280, 300);
         choiceBtn1.mouseOver(Btn1Over);
@@ -2712,6 +2744,11 @@ function updateTextDay1() {
         MCHead.class("head");
         MCHead.parent("sketchHolder");
         MCHead.position(247, 282);
+        
+        helpText = createDiv("Don't know which to choose? Hover over the buttons to see their potential influence.");
+        helpText.class("help");
+        helpText.parent("sketchHolder");
+        helpText.position(282, 500);
 
     }
 
@@ -2723,10 +2760,10 @@ function updateTextDay1() {
         proceed.style("cursor", "default");
         proceed.hide();
         nextBtn = createDiv("Dismiss the court");
-            nextBtn.class("choice");
-            nextBtn.parent("sketchHolder");
-            nextBtn.position(260, 260);
-            nextBtn.mouseClicked(next);
+        nextBtn.class("choice");
+        nextBtn.parent("sketchHolder");
+        nextBtn.position(260, 260);
+        nextBtn.mouseClicked(next);
         dialogName.html("Eunuch");
         dialogText.html("If there is nothing else to discuss, we shall dismiss the court.");
     }
@@ -2749,8 +2786,10 @@ function updateTextEunuchIntro() {
         dialogText.html(eunuchIntroText[i]);
 
         if (i === 7) {
+            skip.remove();
             MCIntro = false;
             mask.show();
+            helpText.show();
             arrow.visible = false;
             proceed.attribute('disabled', 'disabled');
             proceed.style("cursor", "default");
@@ -2786,21 +2825,22 @@ function updateTextEunuchIntro() {
 }
 
 function updateTextDay1Night() {
-    
-i = i + 1;
-dialogText.html(day1NightText[i]);
-    
- if (i === 5) {
-            proceed.attribute('disabled', 'disabled');
-            proceed.style("cursor", "default");
-            proceed.hide();
-            mask.show()
-            nextBtn.show();
-            nextBtn.position(260, 260);
-            nextBtn.html("END THIS DAY");
-            arrow.visible = false;
-        }
-    
+
+    i = i + 1;
+    dialogText.html(day1NightText[i]);
+
+    if (i === 5) {
+        skip.remove();
+        proceed.attribute('disabled', 'disabled');
+        proceed.style("cursor", "default");
+        proceed.hide();
+        mask.show()
+        nextBtn.show();
+        nextBtn.position(260, 260);
+        nextBtn.html("END THIS DAY");
+        arrow.visible = false;
+    }
+
 }
 
 function updateTextDay2() {
@@ -2829,9 +2869,11 @@ function updateTextDay2() {
     }
 
     if (i === 7) {
+        skip.remove();
         opNow = false;
         removeOp();
         mask.show();
+        helpText.show();
         arrow.visible = false;
         proceed.attribute('disabled', 'disabled');
         proceed.style("cursor", "default");
@@ -2894,9 +2936,11 @@ function updateTextDay3() {
     }
 
     if (i === 7) {
+        skip.remove();
         opNow = false;
         removeOp();
         mask.show();
+        helpText.show();
         arrow.visible = false;
         proceed.attribute('disabled', 'disabled');
         proceed.style("cursor", "default");
@@ -2949,15 +2993,17 @@ function updateTextDay4() {
 
     if (i === 5) {
         solutionY = 265,
-        solutionA = 0;
+            solutionA = 0;
         opNow = true;
         solution = "MC";
     }
 
     if (i === 7) {
+        skip.remove();
         opNow = false;
         removeOp();
         mask.show();
+        helpText.show();
         arrow.visible = false;
         proceed.attribute('disabled', 'disabled');
         proceed.style("cursor", "default");
@@ -3010,15 +3056,17 @@ function updateTextDay5() {
 
     if (i === 5) {
         solutionY = 265,
-        solutionA = 0;
+            solutionA = 0;
         opNow = true;
         solution = "MC";
     }
 
     if (i === 7) {
+        skip.remove();
         opNow = false;
         removeOp();
         mask.show();
+        helpText.show();
         arrow.visible = false;
         proceed.attribute('disabled', 'disabled');
         proceed.style("cursor", "default");
@@ -3068,17 +3116,19 @@ function updateTextGCMeet0() {
         dialogText.html(GCMeet0Text[i]);
 
         if (i === 4) {
+            skip.remove();
             mask.show();
+            helpText.show();
             arrow.visible = false;
             proceed.attribute('disabled', 'disabled');
             proceed.style("cursor", "default");
             proceed.hide();
             choiceBtn3.show();
             choiceBtn3.html("Fire the unqualified officials");
-            choiceBtn3.position(250, 200);
+            choiceBtn3.position(260, 200);
             choiceBtn4.show();
             choiceBtn4.html("I'm not interested");
-            choiceBtn4.position(250, 300);
+            choiceBtn4.position(260, 300);
         }
 
         if (i === 6) {
@@ -3107,17 +3157,19 @@ function updateTextGCMeet1() {
         dialogText.html(GCMeet1Text[i]);
 
         if (i === 3) {
+            skip.remove();
             mask.show();
+            helpText.show();
             arrow.visible = false;
             proceed.attribute('disabled', 'disabled');
             proceed.style("cursor", "default");
             proceed.hide();
             choiceBtn3.show();
             choiceBtn3.html("Fire the dishonest officials");
-            choiceBtn3.position(250, 200);
+            choiceBtn3.position(260, 200);
             choiceBtn4.show();
             choiceBtn4.html("I'm not interested");
-            choiceBtn4.position(250, 300);
+            choiceBtn4.position(260, 300);
         }
 
         if (i === 5) {
@@ -3146,17 +3198,19 @@ function updateTextGCMeet2() {
         dialogText.html(GCMeet2Text[i]);
 
         if (i === 3) {
+            skip.remove();
             mask.show();
+            helpText.show();
             arrow.visible = false;
             proceed.attribute('disabled', 'disabled');
             proceed.style("cursor", "default");
             proceed.hide();
             choiceBtn3.show();
             choiceBtn3.html("Interrogate Eunuch Wang and Minister Chen");
-            choiceBtn3.position(250, 200);
+            choiceBtn3.position(260, 200);
             choiceBtn4.show();
             choiceBtn4.html("I don't think you have solid evidence to win my trust");
-            choiceBtn4.position(250, 300);
+            choiceBtn4.position(260, 300);
         }
 
         if (i === 5) {
@@ -3180,28 +3234,30 @@ function updateTextEunuchMeet0() {
         nextBtn.html("END THIS DAY");
 
     } else {
-    
-    i = i + 1;
-    dialogText.html(EMeet0Text[i]);
 
-    if (i === 2) {
-        mask.show();
-        arrow.visible = false;
-        proceed.attribute('disabled', 'disabled');
-        proceed.style("cursor", "default");
-        proceed.hide();
-        choiceBtn3.show();
-        choiceBtn3.html("Fill the open positions with Minister Chen's allies");
-        choiceBtn3.position(250, 200);
-        choiceBtn4.show();
-        choiceBtn4.html("I'm not interested");
-        choiceBtn4.position(250, 300);
-    }
-        
-        if (i === 4) {
-           studyEnd = true; 
+        i = i + 1;
+        dialogText.html(EMeet0Text[i]);
+
+        if (i === 2) {
+            skip.remove();
+            mask.show();
+            helpText.show();
+            arrow.visible = false;
+            proceed.attribute('disabled', 'disabled');
+            proceed.style("cursor", "default");
+            proceed.hide();
+            choiceBtn3.show();
+            choiceBtn3.html("Fill the open positions with Minister Chen's allies");
+            choiceBtn3.position(260, 200);
+            choiceBtn4.show();
+            choiceBtn4.html("I'm not interested");
+            choiceBtn4.position(260, 300);
         }
-        
+
+        if (i === 4) {
+            studyEnd = true;
+        }
+
     }
 }
 
@@ -3219,28 +3275,30 @@ function updateTextEunuchMeet1() {
         nextBtn.html("END THIS DAY");
 
     } else {
-    
-    i = i + 1;
-    dialogText.html(EMeet1Text[i]);
 
-    if (i === 3) {
-        mask.show();
-        arrow.visible = false;
-        proceed.attribute('disabled', 'disabled');
-        proceed.style("cursor", "default");
-        proceed.hide();
-        choiceBtn3.show();
-        choiceBtn3.html("Arrest the corrupt officials");
-        choiceBtn3.position(250, 200);
-        choiceBtn4.show();
-        choiceBtn4.html("I'm not interested");
-        choiceBtn4.position(250, 300);
-    }
-        
-        if (i === 5) {
-           studyEnd = true; 
+        i = i + 1;
+        dialogText.html(EMeet1Text[i]);
+
+        if (i === 3) {
+            skip.remove();
+            mask.show();
+            helpText.show();
+            arrow.visible = false;
+            proceed.attribute('disabled', 'disabled');
+            proceed.style("cursor", "default");
+            proceed.hide();
+            choiceBtn3.show();
+            choiceBtn3.html("Arrest the corrupt officials");
+            choiceBtn3.position(260, 200);
+            choiceBtn4.show();
+            choiceBtn4.html("I'm not interested");
+            choiceBtn4.position(260, 300);
         }
-        
+
+        if (i === 5) {
+            studyEnd = true;
+        }
+
     }
 }
 
@@ -3258,232 +3316,565 @@ function updateTextEunuchMeet2() {
         nextBtn.html("END THIS DAY");
 
     } else {
-    
-    i = i + 1;
-    dialogText.html(EMeet2Text[i]);
 
-    if (i === 3) {
-        mask.show();
-        arrow.visible = false;
-        proceed.attribute('disabled', 'disabled');
-        proceed.style("cursor", "default");
-        proceed.hide();
-        choiceBtn3.show();
-        choiceBtn3.html("Arrest Grand Chancellor Li");
-        choiceBtn3.position(250, 200);
-        choiceBtn4.show();
-        choiceBtn4.html("I don't think you have solid evidence to win my trust");
-        choiceBtn4.position(250, 300);
-    }
-        
-        if (i === 5) {
-           studyEnd = true; 
+        i = i + 1;
+        dialogText.html(EMeet2Text[i]);
+
+        if (i === 3) {
+            skip.remove();
+            mask.show();
+            helpText.show();
+            arrow.visible = false;
+            proceed.attribute('disabled', 'disabled');
+            proceed.style("cursor", "default");
+            proceed.hide();
+            choiceBtn3.show();
+            choiceBtn3.html("Arrest Grand Chancellor Li");
+            choiceBtn3.position(260, 200);
+            choiceBtn4.show();
+            choiceBtn4.html("I don't think you have solid evidence to win my trust");
+            choiceBtn4.position(260, 300);
         }
-        
+
+        if (i === 5) {
+            studyEnd = true;
+        }
+
     }
 }
 
 function updateTextLastNight() {
-    
-i = i + 1;
-dialogText.html(lastNightText[i]);
-    
- if (i === 4) {
-            proceed.attribute('disabled', 'disabled');
-            proceed.style("cursor", "default");
-            proceed.hide();
-            mask.show()
-            nextBtn.show();
-            nextBtn.position(260, 260);
-            nextBtn.html("END THIS DAY");
-            arrow.visible = false;
-        }
-    
+
+    i = i + 1;
+    dialogText.html(lastNightText[i]);
+
+    if (i === 4) {
+        proceed.attribute('disabled', 'disabled');
+        proceed.style("cursor", "default");
+        proceed.hide();
+        mask.show()
+        nextBtn.show();
+        nextBtn.position(260, 260);
+        nextBtn.html("END THIS DAY");
+        arrow.visible = false;
+    }
+
 }
 
 function updateTextEnding1() {
-i = i + 1;
-sceneText.html(ending1Text[i]);
+    i = i + 1;
+    sceneText.html(ending1Text[i]);
 
-    
- if (i === 4) {
-     sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.");
-     sceneName.html("Credits");  
-     
-     bigMask = createDiv("");
-bigMask.id("bigMask");
-bigMask.parent("sketchHolder");
-bigMask.position(0, 0);
 
-    
-againBtn = createDiv("PLAY AGAIN");
-againBtn.parent("sketchHolder");    
-againBtn.position(340, 240);
-againBtn.class('choice');
-againBtn.mouseClicked(playAgain);
-
- }
-    
-if (i === 5) {
-     sceneText.html("Special thanks to Charlie Denton, Vi Nguyen, Kantwon Rogers, Hao Wu, Yajing Yang, and... ." )
-
-}
-
-if (i === 6) {
-    
-    sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" +'Visit my website: www.yufangxiao.com.')
-    
-proceed.attribute('disabled', 'disabled');
-proceed.style("cursor", "default");
-proceed.hide();
-arrow.visible = false;
-   
-}
-    
-
+      if (i === 4) {
+        sceneText.html("Something similar happened in Han Dynasty (202 BC – 220 AD). The Emperor Wu of Han solidified his power by performing a series of political reforms. During his reign (141 – 87 BC), not only did he prevent any political influencers from exceeding his power, but also defeated multiple invasions from Xiongnu. To learn more, please click the button above.");
         
+        sceneName.html("Historical Facts");
+
+        bigMask = createDiv("");
+        bigMask.id("bigMask");
+        bigMask.parent("sketchHolder");
+        bigMask.position(0, 0);
+
+
+        againBtn = createDiv("PLAY AGAIN");
+        againBtn.parent("sketchHolder");
+        againBtn.position(340, 200);
+        againBtn.class('choice');
+        againBtn.mouseClicked(playAgain);
+        
+        learnBtn = createDiv("LEARN MORE HISTORY");
+        learnBtn.parent("sketchHolder");
+        learnBtn.position(340, 280);
+        learnBtn.class('choice');
+        learnBtn.mouseClicked(learnMore);
+
+    }
+    
+    if (i === 5) {
+        sceneName.html("Credits");
+        sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.")
+
+    }
+
+
+    if (i === 6) {
+        sceneText.html("Special thanks to Charlie Denton, Yunshu Jiang, Vi Nguyen, Kantwon Rogers, Yun-Te Sung, Hao Wu, Shengxi Wu, Yajing Yang, and Georgia Tech Communication Center.")
+
+    }
+
+    if (i === 7) {
+
+        sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" + 'Visit my website: www.yufangxiao.com.')
+
+        proceed.attribute('disabled', 'disabled');
+        proceed.style("cursor", "default");
+        proceed.hide();
+        arrow.visible = false;
+
+    }
+
+
 }
 
 function updateTextEnding2() {
-i = i + 1;
-sceneText.html(ending2Text[i]);
+    i = i + 1;
+    sceneText.html(ending2Text[i]);
 
-    
- if (i === 4) {
-     sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.");
-     sceneName.html("Credits");  
-     
-     bigMask = createDiv("");
-bigMask.id("bigMask");
-bigMask.parent("sketchHolder");
-bigMask.position(0, 0);
 
-    
-againBtn = createDiv("PLAY AGAIN");
-againBtn.parent("sketchHolder");    
-againBtn.position(340, 240);
-againBtn.class('choice');
-againBtn.mouseClicked(playAgain);
-
- }
-    
-if (i === 5) {
-     sceneText.html("Special thanks to Charlie Denton, Vi Nguyen, Kantwon Rogers, Hao Wu, Yajing Yang, and... .")
-
-}
-
-if (i === 6) {
-    
-    sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" +'Visit my website: www.yufangxiao.com.')
-    
-proceed.attribute('disabled', 'disabled');
-proceed.style("cursor", "default");
-proceed.hide();
-arrow.visible = false;
-   
-}
-    
-
+   if (i === 4) {
+        sceneText.html("Something similar happened in Ming Dynasty (202 BC – 220 AD). The Emperor Yingzong of Ming was used by the opportunitist and couldn't make wise decisions to deal with the war against Mongols. In 1449, he relied on Eunuch Wang Zhen's advice to direct the battle himself. However, this wrong action had the Ming army lost the war and the emperor captured by the Mongols. To learn more, please click the button above. ");
         
+        sceneName.html("Historical Facts");
+
+        bigMask = createDiv("");
+        bigMask.id("bigMask");
+        bigMask.parent("sketchHolder");
+        bigMask.position(0, 0);
+
+
+        againBtn = createDiv("PLAY AGAIN");
+        againBtn.parent("sketchHolder");
+        againBtn.position(340, 200);
+        againBtn.class('choice');
+        againBtn.mouseClicked(playAgain);
+        
+        learnBtn = createDiv("LEARN MORE HISTORY");
+        learnBtn.parent("sketchHolder");
+        learnBtn.position(340, 280);
+        learnBtn.class('choice');
+        learnBtn.mouseClicked(learnMore);
+
+    }
+    
+    if (i === 5) {
+        sceneName.html("Credits");
+        sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.")
+
+    }
+
+
+    if (i === 6) {
+        sceneText.html("Special thanks to Charlie Denton, Yunshu Jiang, Vi Nguyen, Kantwon Rogers, Yun-Te Sung, Hao Wu, Shengxi Wu, Yajing Yang, and Georgia Tech Communication Center.")
+
+    }
+
+    if (i === 7) {
+
+        sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" + 'Visit my website: www.yufangxiao.com.')
+
+        proceed.attribute('disabled', 'disabled');
+        proceed.style("cursor", "default");
+        proceed.hide();
+        arrow.visible = false;
+
+    }
+
+
+
 }
 
 function updateTextEnding3() {
-i = i + 1;
-sceneText.html(ending3Text[i]);
+    i = i + 1;
+    sceneText.html(ending3Text[i]);
 
-    
- if (i === 4) {
-     sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.");
-     sceneName.html("Credits");  
-     
-     bigMask = createDiv("");
-bigMask.id("bigMask");
-bigMask.parent("sketchHolder");
-bigMask.position(0, 0);
 
-    
-againBtn = createDiv("PLAY AGAIN");
-againBtn.parent("sketchHolder");    
-againBtn.position(340, 240);
-againBtn.class('choice');
-againBtn.mouseClicked(playAgain);
-
- }
-    
-if (i === 5) {
-     sceneText.html("Special thanks to Charlie Denton, Vi Nguyen, Kantwon Rogers, Hao Wu, Yajing Yang, and... .")
-
-}
-
-if (i === 6) {
-    
-    sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" +'Visit my website: www.yufangxiao.com.')
-    
-proceed.attribute('disabled', 'disabled');
-proceed.style("cursor", "default");
-proceed.hide();
-arrow.visible = false;
-   
-}
-    
-
+    if (i === 4) {
+        sceneText.html("Something similar happened in Ming Dynasty (1368 - 1644). The Grand Chancellor, Hu Weiyong, gained a magnitude of power and took control of various areas in politics. Allegedly, he even attempted to usurp the throne. However, unlike what you ended up with, the Hongwu Emperor realized Hu's threat and executed him on charges of treason (1380). To learn more, please click the button above.");
         
+        sceneName.html("Historical Facts");
+
+        bigMask = createDiv("");
+        bigMask.id("bigMask");
+        bigMask.parent("sketchHolder");
+        bigMask.position(0, 0);
+
+
+        againBtn = createDiv("PLAY AGAIN");
+        againBtn.parent("sketchHolder");
+        againBtn.position(340, 200);
+        againBtn.class('choice');
+        againBtn.mouseClicked(playAgain);
+        
+        learnBtn = createDiv("LEARN MORE HISTORY");
+        learnBtn.parent("sketchHolder");
+        learnBtn.position(340, 280);
+        learnBtn.class('choice');
+        learnBtn.mouseClicked(learnMore);
+
+    }
+    
+    if (i === 5) {
+        sceneName.html("Credits");
+        sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.")
+
+    }
+
+
+    if (i === 6) {
+        sceneText.html("Special thanks to Charlie Denton, Yunshu Jiang, Vi Nguyen, Kantwon Rogers, Yun-Te Sung, Hao Wu, Shengxi Wu, Yajing Yang, and Georgia Tech Communication Center.")
+
+    }
+
+    if (i === 7) {
+
+        sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" + 'Visit my website: www.yufangxiao.com.')
+
+        proceed.attribute('disabled', 'disabled');
+        proceed.style("cursor", "default");
+        proceed.hide();
+        arrow.visible = false;
+
+    }
+
+
+
 }
 
 function updateTextEnding4() {
-i = i + 1;
-sceneText.html(ending4Text[i]);
+    i = i + 1;
+    sceneText.html(ending4Text[i]);
 
-    
- if (i === 4) {
-     sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.");
-     sceneName.html("Credits");  
-     
-     bigMask = createDiv("");
-bigMask.id("bigMask");
-bigMask.parent("sketchHolder");
-bigMask.position(0, 0);
-
-    
-againBtn = createDiv("PLAY AGAIN");
-againBtn.parent("sketchHolder");    
-againBtn.position(340, 240);
-againBtn.class('choice');
-againBtn.mouseClicked(playAgain);
-
- }
-    
-if (i === 5) {
-     sceneText.html("Special thanks to Charlie Denton, Vi Nguyen, Kantwon Rogers, Hao Wu, Yajing Yang, and... .")
-
-}
-
-if (i === 6) {
-    
-    sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" +'Visit my website: www.yufangxiao.com.')
-    
-proceed.attribute('disabled', 'disabled');
-proceed.style("cursor", "default");
-proceed.hide();
-arrow.visible = false;
-   
-}
+    if (i === 4) {
+        sceneText.html("Something similar happened in Ming Dynasty (1368 - 1644). Wei Zongxian is considered as one of the most powerful and notorious eunuchs in Chinese history. During the reign of the Tianqi Emperor (1620 - 1627), Wei became the head of the Eastern Depot and had the ability to issue and deliver imperial edicts. He also used his power to arrest and convict dissidents. To learn more, please click the button above.");
         
+        sceneName.html("Historical Facts");
+
+        bigMask = createDiv("");
+        bigMask.id("bigMask");
+        bigMask.parent("sketchHolder");
+        bigMask.position(0, 0);
+
+
+        againBtn = createDiv("PLAY AGAIN");
+        againBtn.parent("sketchHolder");
+        againBtn.position(340, 200);
+        againBtn.class('choice');
+        againBtn.mouseClicked(playAgain);
+        
+        learnBtn = createDiv("LEARN MORE HISTORY");
+        learnBtn.parent("sketchHolder");
+        learnBtn.position(340, 280);
+        learnBtn.class('choice');
+        learnBtn.mouseClicked(learnMore);
+
+    }
+    
+    if (i === 5) {
+        sceneName.html("Credits");
+        sceneText.html('Designed and implemented by Fangxiao "Ricky" Yu.' + "<br />" + "Advised by Prof. Janet Murray." + "<br />" + "Made as a master's project for MS Digital Media at Georgia Institute of Technology.")
+
+    }
+
+
+    if (i === 6) {
+        sceneText.html("Special thanks to Charlie Denton, Yunshu Jiang, Vi Nguyen, Kantwon Rogers, Yun-Te Sung, Hao Wu, Shengxi Wu, Yajing Yang, and Georgia Tech Communication Center.")
+
+    }
+
+    if (i === 7) {
+
+        sceneText.html("If you have any questions, please contact me at rickyyiew@outlook.com." + "<br />" + 'Follow me on Instagram: "ricky_yiew". ' + "<br />" + 'Visit my website: www.yufangxiao.com.')
+
+        proceed.attribute('disabled', 'disabled');
+        proceed.style("cursor", "default");
+        proceed.hide();
+        arrow.visible = false;
+
+    }
+
+    
 }
 
-function skipIntro() {
-status = "day1";
-count = 0; 
-first = true;
-allWhite = false;
-i = -1;
-skip.remove();
-sceneName.remove();
-sceneText.remove();
-proceed.remove(); 
-scene = "Morning Court";
-stringY = -227.5;
-progress = 0;
+function skipBtn() {
+if (status === "day5" && scene === "Morning Court") {
+   if (i === 2 || i === 3 || i === 5 || i === 6) {
+    opNow = false;
+    removeOp();    
+    }
+    
+    skip.remove(); 
+    i = 7;
+    dialogText.html(day5Text[i]);
+    dialogName.html(day5Name[i]);
+    mask.show();
+    helpText.show();
+    arrow.visible = false;
+    proceed.attribute('disabled', 'disabled');
+    proceed.style("cursor", "default");
+    proceed.hide();
+    choiceBtn1.show();
+    choiceBtn2.show();
+    choiceBtn1.html("Ask General Yang to lead the army");
+    choiceBtn2.html("Ask Eunuch Wang to lead the army");
+    choiceBtn1.position(280, 200);
+    choiceBtn2.position(280, 300);
+    GCHead.show();
+    MCHead.show();  
+}     
+    
+if (status === "day4" && scene === "Royal Study") {
+  if (meeting === "eunuch") {
+            if (eunuchMeet === 0) {
+                i = 1;
+                updateTextEunuchMeet0();
+            }
+            if (eunuchMeet === 1) {
+                i = 2;
+                updateTextEunuchMeet1();
+            }
+            if (eunuchMeet === 2) {
+                i = 2;
+                updateTextEunuchMeet2();
+            }
+        }
+
+    if (meeting === "Grand Chancellor") {
+            if (GCMeet === 0) {
+                i = 3;
+                updateTextGCMeet0();
+            }
+            if (GCMeet === 1) {
+                i = 2;
+                updateTextGCMeet1();
+            }
+            if (GCMeet === 2) {
+                i = 2;
+                updateTextGCMeet2();
+            }
+        }
+   
+}  
+    
+if (status === "day4" && scene === "Morning Court") {
+   if (i === 2 || i === 3 || i === 5 || i === 6) {
+    opNow = false;
+    removeOp();    
+    }
+    
+    skip.remove(); 
+    i = 7;
+    dialogText.html(day4Text[i]);
+    dialogName.html(day4Name[i]);
+    mask.show();
+    helpText.show();
+    arrow.visible = false;
+    proceed.attribute('disabled', 'disabled');
+    proceed.style("cursor", "default");
+    proceed.hide();
+    choiceBtn1.show();
+    choiceBtn2.show();
+    choiceBtn1.html("Import horses from Korea");
+    choiceBtn2.html("Import ginseng and diamonds from Korea");
+    choiceBtn1.position(280, 200);
+    choiceBtn2.position(280, 300);
+    GCHead.show();
+    MCHead.show();  
+} 
+    
+if (status === "day3" && scene === "Royal Study") {
+  if (meeting === "eunuch") {
+            if (eunuchMeet === 0) {
+                i = 1;
+                updateTextEunuchMeet0();
+            }
+            if (eunuchMeet === 1) {
+                i = 2;
+                updateTextEunuchMeet1();
+            }
+            if (eunuchMeet === 2) {
+                i = 2;
+                updateTextEunuchMeet2();
+            }
+        }
+
+    if (meeting === "Grand Chancellor") {
+            if (GCMeet === 0) {
+                i = 3;
+                updateTextGCMeet0();
+            }
+            if (GCMeet === 1) {
+                i = 2;
+                updateTextGCMeet1();
+            }
+            if (GCMeet === 2) {
+                i = 2;
+                updateTextGCMeet2();
+            }
+        }
+   
+}      
+    
+if (status === "day3" && scene === "Morning Court") {
+   if (i === 2 || i === 3 || i === 5 || i === 6) {
+    opNow = false;
+    removeOp();    
+    }
+    
+    skip.remove(); 
+    i = 7;
+    dialogText.html(day3Text[i]);
+    dialogName.html(day3Name[i]);
+    mask.show();
+    helpText.show();
+    arrow.visible = false;
+    proceed.attribute('disabled', 'disabled');
+    proceed.style("cursor", "default");
+    proceed.hide();
+    choiceBtn1.show();
+    choiceBtn2.show();
+    choiceBtn1.html("Send the workers to build the infrastructure in the South");
+    choiceBtn2.html("Send the workers to build the defense at the border");
+    choiceBtn1.position(280, 200);
+    choiceBtn2.position(280, 300);
+    GCHead.show();
+    MCHead.show();  
+}
+    
+if (status === "day2" && scene === "Royal Study") {
+  if (meeting === "eunuch") {
+            if (eunuchMeet === 0) {
+                i = 1;
+                updateTextEunuchMeet0();
+            }
+            if (eunuchMeet === 1) {
+                i = 2;
+                updateTextEunuchMeet1();
+            }
+            if (eunuchMeet === 2) {
+                i = 2;
+                updateTextEunuchMeet2();
+            }
+        }
+
+    if (meeting === "Grand Chancellor") {
+            if (GCMeet === 0) {
+                i = 3;
+                updateTextGCMeet0();
+            }
+            if (GCMeet === 1) {
+                i = 2;
+                updateTextGCMeet1();
+            }
+            if (GCMeet === 2) {
+                i = 2;
+                updateTextGCMeet2();
+            }
+        }
+   
+}    
+    
+if (status === "day2" && scene === "Morning Court") {
+    if (i === 2 || i === 3 || i === 5 || i === 6) {
+    opNow = false;
+    removeOp();    
+    }
+    
+    skip.remove(); 
+    i = 7;
+    dialogText.html(day2Text[i]);
+    dialogName.html(day2Name[i]);
+    mask.show();
+    helpText.show();
+    arrow.visible = false;
+    proceed.attribute('disabled', 'disabled');
+    proceed.style("cursor", "default");
+    proceed.hide();
+    choiceBtn1.show();
+    choiceBtn2.show();
+    choiceBtn1.html("Spend money on the canal");
+    choiceBtn2.html("Spend money on the weapons and armor");
+    choiceBtn1.position(280, 200);
+    choiceBtn2.position(280, 300);
+    GCHead.show();
+    MCHead.show();
+}    
+    
+if (status === "day1Night") {
+   skip.remove();
+   next();
+}   
+    
+if (status === "day1" && scene === "Royal Study")  {
+   i = 6;
+   updateTextEunuchIntro();
+} 
+    
+if (status === "day1" && scene === "Morning Court") {
+   
+    
+    if (i === 8 || i === 9 || i === 11 || i === 12) {
+    opNow = false;
+    removeOp();    
+    }
+    
+    skip.remove();
+    
+    i = 13;
+    dialogText.html(day1Text[i]);
+    dialogName.html(day1Name[i]);
+        mask = createDiv("");
+        mask.id("mask");
+        mask.parent("sketchHolder");
+        mask.position(0, 49);
+        arrow.visible = false;
+        proceed.attribute('disabled', 'disabled');
+        proceed.style("cursor", "default");
+        proceed.hide();
+
+        choiceBtn1 = createDiv("Cut your own recreational expenses");
+        choiceBtn1.class('choice');
+        choiceBtn1.parent("sketchHolder");
+        choiceBtn1.mouseClicked(Btn1);
+
+        choiceBtn2 = createDiv("Impose more taxes on the businessmen in the south");
+        choiceBtn2.class('choice');
+        choiceBtn2.parent("sketchHolder");
+        choiceBtn2.mouseClicked(Btn2);
+
+
+        choiceBtn1.position(280, 200);
+        choiceBtn2.position(280, 300);
+        choiceBtn1.mouseOver(Btn1Over);
+        choiceBtn1.mouseOut(BtnOut);
+        choiceBtn1.mouseClicked(GCBtn);
+        choiceBtn2.mouseOver(Btn2Over);
+        choiceBtn2.mouseOut(BtnOut);
+        choiceBtn2.mouseClicked(MCBtn);
+        GCHead = createImg("image/GCHead.png");
+        MCHead = createImg("image/MCHead.png");
+        GCHead.class("head");
+        GCHead.parent("sketchHolder");
+        GCHead.position(247, 182);
+        MCHead.class("head");
+        MCHead.parent("sketchHolder");
+        MCHead.position(247, 282);
+        
+        helpText = createDiv("Don't know which to choose? Hover over the buttons to see their potential influence.");
+        helpText.class("help");
+        helpText.parent("sketchHolder");
+        helpText.position(282, 500);
+ }    
+    
+  if (status === "bgStory") {
+    status = "day1";
+    count = 0;
+    first = true;
+    allWhite = false;
+    i = -1;
+    skip.remove();
+    sceneName.remove();
+    sceneText.remove();
+    proceed.remove();
+    scene = "Morning Court";
+    stringY = -227.5;
+    progress = 0;  
+  }
+    
+ 
+    
+
+    
 }
 
 function Btn1() {
@@ -3538,14 +3929,16 @@ function Btn3() {
         mask.hide();
         choiceBtn3.hide();
         choiceBtn4.hide();
+        helpText.hide();
         j = 0;
         update = true;
         progressChange.remove();
         poleChange.remove();
-        
+        pass = false;
+
         if (meeting === "Grand Chancellor") {
-            
-                 if (GCMeet === 2) {
+
+            if (GCMeet === 2) {
                 power = 100
                 stringMove = -325;
                 stringDirection = "up";
@@ -3554,8 +3947,8 @@ function Btn3() {
                 GCMeet = GCMeet + 1;
                 GCRepeat = false;
             }
-            
-              if (GCMeet === 1) {
+
+            if (GCMeet === 1) {
                 power = power + 35;
                 stringMove = stringY - 136.5;
                 stringDirection = "up";
@@ -3564,7 +3957,7 @@ function Btn3() {
                 GCMeet = GCMeet + 1;
                 GCRepeat = false;
             }
-            
+
             if (GCMeet === 0) {
                 power = power + 25;
                 stringMove = stringY - 97.5;
@@ -3574,8 +3967,8 @@ function Btn3() {
                 GCMeet = GCMeet + 1;
                 GCRepeat = false;
             }
-            
-            
+
+
         }
 
         if (stringMove < -325) {
@@ -3583,7 +3976,7 @@ function Btn3() {
         }
 
         if (meeting === "eunuch") {
-             if (eunuchMeet === 2) {
+            if (eunuchMeet === 2) {
 
                 power = 0;
                 stringMove = 65;
@@ -3594,8 +3987,8 @@ function Btn3() {
                 ERepeat = false;
 
             }
-            
-             if (eunuchMeet === 1) {
+
+            if (eunuchMeet === 1) {
 
                 power = power - 35;
                 stringMove = stringY + 136.5;
@@ -3618,9 +4011,9 @@ function Btn3() {
                 ERepeat = false;
 
             }
-            
-            
-            
+
+
+
         }
 
         if (stringMove > 65) {
@@ -3648,6 +4041,7 @@ function Btn4() {
             mask.hide();
             choiceBtn3.hide();
             choiceBtn4.hide();
+            helpText.hide();
             dialogText.html("I'm so sorry to bother you with this. If you need any help from me, please ask me to come here again. I shall bring you more useful ideas.");
             proceed.show();
             proceed.removeAttribute('disabled');
@@ -3664,6 +4058,7 @@ function Btn4() {
             mask.hide();
             choiceBtn3.hide();
             choiceBtn4.hide();
+            helpText.hide();
             dialogText.html("My apologies, your majesty. But I would still advise you to reconsider the things I said. I'll meet you again if you need anything.");
             proceed.show();
             proceed.removeAttribute('disabled');
@@ -3677,7 +4072,7 @@ function Btn4() {
 }
 
 function Btn1Over() {
-    poleChange = createImg("image/up.png");
+    poleChange = createImg("image/up1.png");
     poleChange.parent("sketchHolder");
     poleChange.position(1045, 194);
     if (status === "day1") {
@@ -3696,7 +4091,7 @@ function Btn1Over() {
         }
 
     }
-      if (status === "day3") {
+    if (status === "day3") {
         progressChange = createImg("image/decrease.png");
         progressChange.parent("sketchHolder");
         if (progressFill === 0) {
@@ -3710,8 +4105,8 @@ function Btn1Over() {
         }
 
     }
-    
-      if (status === "day4" || status === "day5") {
+
+    if (status === "day4" || status === "day5") {
         progressChange = createImg("image/increase.png");
         progressChange.parent("sketchHolder");
         if (progressFill === 0) {
@@ -3728,9 +4123,9 @@ function Btn1Over() {
 }
 
 function Btn2Over() {
-    poleChange = createImg("image/down.png");
+    poleChange = createImg("image/down1.png");
     poleChange.parent("sketchHolder");
-    poleChange.position(1045, 442);
+    poleChange.position(1045, 460);
     if (status === "day1") {
         progressChange = createImg("image/increase.png");
         progressChange.parent("sketchHolder");
@@ -3748,8 +4143,8 @@ function Btn2Over() {
         }
 
     }
-    
-      if (status === "day3") {
+
+    if (status === "day3") {
         progressChange = createImg("image/increase.png");
         progressChange.parent("sketchHolder");
         if (progressFill === 0) {
@@ -3763,8 +4158,8 @@ function Btn2Over() {
         }
 
     }
-    
-     if (status === "day4" || status === "day5") {
+
+    if (status === "day4" || status === "day5") {
         progressChange = createImg("image/decrease.png");
         progressChange.parent("sketchHolder");
         if (progressFill === 0) {
@@ -3782,17 +4177,32 @@ function Btn2Over() {
 
 function Btn3Over() {
     if (meeting === "eunuch") {
-        poleChange = createImg("image/down.png");
+        if(eunuchMeet === 0) {
+        poleChange = createImg("image/down2.png");
         poleChange.parent("sketchHolder");
         poleChange.position(1045, 442);
-        progressChange = createDiv("");
+        progressChange = createDiv("");   
+        } else {
+        poleChange = createImg("image/down3.png");
+        poleChange.parent("sketchHolder");
+        poleChange.position(1045, 424);
+        progressChange = createDiv("");     
+        }
+        
     }
 
     if (meeting === "Grand Chancellor") {
-        poleChange = createImg("image/up.png");
+        if (GCMeet === 0) {
+        poleChange = createImg("image/up2.png");
         poleChange.parent("sketchHolder");
         poleChange.position(1045, 194);
-        progressChange = createDiv("");
+        progressChange = createDiv("");    
+        } else {
+        poleChange = createImg("image/up3.png");
+        poleChange.parent("sketchHolder");
+        poleChange.position(1045, 194);
+        progressChange = createDiv("");     
+        }  
     }
 
 }
@@ -3810,6 +4220,7 @@ function GCBtn() {
     choiceBtn2.hide();
     GCHead.hide();
     MCHead.hide();
+    helpText.hide();
     dialogName.html("Grand Chancellor Li");
     i = 14;
     speakerCount = 0;
@@ -3820,16 +4231,16 @@ function GCBtn() {
         stringDirection = "up";
         if (progress < 330) {
             if (status === "day1" || status === "day4" || status === "day5") {
-            progress = progress + 110;
+                progress = progress + 110;
 
-        }
-        if (status === "day2" || status === "day3") {
-            if (progress !== 0) {
-                progress = progress - 110;
             }
-        }   
+            if (status === "day2" || status === "day3") {
+                if (progress !== 0) {
+                    progress = progress - 110;
+                }
+            }
         }
-     
+
         if (stringMove < -325) {
             stringMove = -325;
         }
@@ -3849,6 +4260,7 @@ function MCBtn() {
     choiceBtn2.hide();
     GCHead.hide();
     MCHead.hide();
+    helpText.hide();
     dialogName.html("Grand Chancellor Li");
     i = 14;
     speakerCount = 0;
@@ -3858,15 +4270,15 @@ function MCBtn() {
         stringMove = stringY + 78;
         stringDirection = "down";
         if (progress < 330) {
-         if (status === "day1" || status === "day2" || status === "day3") {
-            progress = progress + 110;
+            if (status === "day1" || status === "day2" || status === "day3") {
+                progress = progress + 110;
+            }
+            if (status === "day4" || status === "day5") {
+                progress = progress - 110;
+            }
+
         }
-        if (status === "day4" || status === "day5") {
-            progress = progress - 110;
-        }
-   
-        }
-        
+
         if (stringMove > 65) {
             stringMove = 65;
         }
@@ -4416,7 +4828,7 @@ function removeOp() {
 }
 
 function updateMeter() {
-    
+
     if (stringY !== stringMove) {
         if (stringDirection === "up") {
             stringY = stringY - 195 / 120;
@@ -4427,7 +4839,41 @@ function updateMeter() {
     } else {
 
         j = j + 1
-        if (j >= 15) {
+        
+        if (pass === true) {
+            
+        if (j === 1) {
+        flip = true;
+        }
+        
+        if (j >= 120) {
+            if (progressFill !== progress) {
+
+                if (progressFill < progress) {
+                    progressFill = progressFill + 2.5;
+                } else {
+                    progressFill = progressFill - 2.5;
+                }
+
+
+            }
+
+        }
+
+        if (j === 149) {
+
+            proceed.show();
+            proceed.removeAttribute('disabled');
+            proceed.style("cursor", "pointer");
+            arrow.visible = true;
+
+        }
+
+            
+        } else {
+         
+            
+             if (j >= 15) {
             if (progressFill !== progress) {
 
                 if (progressFill < progress) {
@@ -4449,7 +4895,10 @@ function updateMeter() {
             arrow.visible = true;
 
         }
-
+            
+        }
+        
+       
 
     }
 
@@ -4473,6 +4922,19 @@ function updateMeter() {
 }
 
 function party() {
+    if (partyPower >= 100) {
+        party1 = image(redDouble, 120, 180, 105, 110);
+        party2 = image(redDouble, 240, 180, 105, 110);
+        party3 = image(redParty, 140, 250, 57, 129);
+        party4 = image(redParty, 200, 250, 57, 129);
+        party5 = image(redParty, 260, 250, 57, 129);
+
+        party6 = image(redDouble, 700, 180, 105, 110);
+        party7 = image(redDouble, 820, 180, 105, 110);
+        party8 = image(redParty, 720, 250, 57, 129);
+        party9 = image(redParty, 780, 250, 57, 129);
+        party10 = image(redParty, 840, 250, 57, 129);
+    }
     if (partyPower >= 90 && partyPower < 100) {
         party1 = image(redDouble, 120, 180, 105, 110);
         party2 = image(redDouble, 240, 180, 105, 110);
@@ -4598,43 +5060,124 @@ function party() {
         party9 = image(blueParty, 780, 250, 57, 129);
         party10 = image(blueParty, 840, 250, 57, 129);
     }
+    
+     if (partyPower <= 0) {
+        party1 = image(blueDouble, 120, 180, 105, 110);
+        party2 = image(blueDouble, 240, 180, 105, 110);
+        party3 = image(blueParty, 140, 250, 57, 129);
+        party4 = image(blueParty, 200, 250, 57, 129);
+        party5 = image(blueParty, 260, 250, 57, 129);
 
+        party6 = image(blueDouble, 700, 180, 105, 110);
+        party7 = image(blueDouble, 820, 180, 105, 110);
+        party8 = image(blueParty, 720, 250, 57, 129);
+        party9 = image(blueParty, 780, 250, 57, 129);
+        party10 = image(blueParty, 840, 250, 57, 129);
+    }
 
+    if (flip === true) {
+        
+        if (stringDirection === "up") {
+        
 
+      if (partyCount === 10) {
+         partyPower = power
+        }
+      if (partyCount === 30) {
+         partyPower = partyPower - 20
+      }
+      if (partyCount === 45) {
+        partyPower = power
+      }
+      if (partyCount === 60) {
+         partyPower = partyPower - 20
+      }
+      if (partyCount === 70) {
+        partyPower = power
+      }
+      if (partyCount === 80) {
+         partyPower = partyPower - 20
+      }      
+      if (partyCount === 85) {
+        partyPower = power
+      }
+      if (partyCount === 90) {
+         partyPower = partyPower - 20
+      }  
+      if (partyCount === 95) {
+        partyPower = power
+      }
+        
+        }
+        
+      if (stringDirection === "down") {
+        
 
+      if (partyCount === 10) {
+         partyPower = power
+        }
+      if (partyCount === 30) {
+         partyPower = partyPower + 20
+      }
+      if (partyCount === 45) {
+        partyPower = power
+      }
+      if (partyCount === 60) {
+         partyPower = partyPower + 20
+      }
+      if (partyCount === 70) {
+        partyPower = power
+      }
+      if (partyCount === 80) {
+         partyPower = partyPower + 20
+      }      
+      if (partyCount === 85) {
+        partyPower = power
+      }
+      if (partyCount === 90) {
+         partyPower = partyPower + 20
+      }  
+      if (partyCount === 95) {
+        partyPower = power
+      }
+        
+        }
+        
+    partyCount = partyCount + 1;
 
+    }
 }
 
 function dismiss() {
     i = i + 1;
     dismissBtn.hide();
-    
+
     if (power > 0 && power < 100) {
-    dialogName.html("Eunuch");
-    dialogText.html("Your majesty, could you please tell me about your plan after court? I'll get you prepared.");
-    
-    afterCourtPlan = true;   
+        dialogName.html("Eunuch");
+        dialogText.html("Your majesty, could you please tell me about your plan after court? I'll get you prepared.");
+
+        afterCourtPlan = true;
     } else {
-        
-    count = 0;
-    first = true;
-    allWhite = false;
-    dialogText.remove();
-    dialogName.remove();
-    proceed.remove();
-    mask.remove();
-    locationA = 0;    
-        
-    if (power <= 0) {
-    status = "ending4";
+
+        count = 0;
+        first = true;
+        allWhite = false;
+        dialogText.remove();
+        dialogName.remove();
+        proceed.remove();
+        mask.remove();
+        locationA = 0;
+
+        if (power <= 0) {
+            status = "ending4";
+        }
+
+        if (power >= 100) {
+            status = "ending3";
+        }
     }
-        
-    if (power >= 100) {
-    status = "ending3";
-    }
-    }
-    
-    
+
+
 }
 
 function meetGC() {
@@ -4678,7 +5221,7 @@ function meetE() {
 }
 
 function courtSetup() {
- count = count + 1
+    count = count + 1
 
 
     if (count > 30) {
@@ -4744,7 +5287,7 @@ function courtSetup() {
             proceed.id('proceed');
             proceed.parent("sketchHolder");
             proceed.position(0, 50);
-
+            
             partyPower = power;
 
             first = false;
@@ -4806,6 +5349,14 @@ function courtSetup() {
     if (count < 102) {
         transition();
     }
+    
+      if (count === 270) {
+        skip = createImg("image/skip.png");
+        skip.id("skip");
+        skip.parent("sketchHolder");
+        skip.position(905, 65);
+        skip.mouseClicked(skipBtn);
+    }
 
     if (count >= 300) {
         tint(255, 255);
@@ -4819,43 +5370,47 @@ function courtSetup() {
 }
 
 function showPlan() {
-   planCount = planCount + 1    
-   
-   if (planCount === 1) {
-   planMask = createDiv("");
-   planMask.id("planMask");
-   planMask.parent("sketchHolder");
-   planMask.position(0, 48);    
-   }
-   
-    
-   if (planCount === 25) {
-    meetGCBtn = createDiv("Meet Grand Chancellor Li in Royal Study");
-    meetGCBtn.class("choice");
-    meetGCBtn.parent("sketchHolder");
-    meetGCBtn.position(260, 180);
-    meetGCBtn.mouseClicked(meetGC);
-    meetEBtn = createDiv("Meet Eunuch Wang in Royal Study");
-    meetEBtn.class("choice");
-    meetEBtn.parent("sketchHolder");
-    meetEBtn.position(260, 260);
-    meetEBtn.mouseClicked(meetE);
-    nextBtn.show();
-    nextBtn.position(260, 340);
-    nextBtn.html("Won't meet anyone and END THIS DAY"); 
-       
-    
-   }
-    
-   if (planCount === 49) {
-       planMask.remove();
-       afterCourtPlan = false;
-   }
-    
-        
-    
+    planCount = planCount + 1
+
+    if (planCount === 1) {
+        planMask = createDiv("");
+        planMask.id("planMask");
+        planMask.parent("sketchHolder");
+        planMask.position(0, 48);
     }
+
+
+    if (planCount === 25) {
+        meetGCBtn = createDiv("Meet Grand Chancellor Li in Royal Study");
+        meetGCBtn.class("choice");
+        meetGCBtn.parent("sketchHolder");
+        meetGCBtn.position(260, 180);
+        meetGCBtn.mouseClicked(meetGC);
+        meetEBtn = createDiv("Meet Eunuch Wang in Royal Study");
+        meetEBtn.class("choice");
+        meetEBtn.parent("sketchHolder");
+        meetEBtn.position(260, 260);
+        meetEBtn.mouseClicked(meetE);
+        nextBtn.show();
+        nextBtn.position(260, 340);
+        nextBtn.html("Won't meet anyone and END THIS DAY");
+
+
+    }
+
+    if (planCount === 49) {
+        planMask.remove();
+        afterCourtPlan = false;
+    }
+
+
+
+}
 
 function playAgain() {
     location.reload();
+}
+
+function learnMore() {
+    
 }
